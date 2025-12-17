@@ -1,0 +1,115 @@
+
+
+# 1. Write a program that asks for item_name (str), price (float), and quantity (int), then prints exactly:
+# You bought 3 x Coffee at £2.5 each. Total = £7.5 Do this once with concatenation, once with
+# an f-string
+
+#name= str(input("Please enter name of product:  "))
+#price = float(input("enter price: "))
+#quantity = int(input("quantity: "))
+#total_cost = float((price * quantity))
+#print("you bought", quantity, "of", name)
+#print("total cost is ", total_cost)
+
+
+#2.  Age Description using f string and commas ,
+#age = int(input("Enter your age:  "))
+#print(f"you are" ,age, "years old")
+
+#3. Tidy Name & Course
+#fullName= str(input('Enter your fullName: ')).strip()
+#course = str(input('Enter your course: ')).strip()
+#print(f"Student:", fullName.title(), "Course:", course.upper())
+
+#4. Multi-line Details with \n
+#one print() but multiple lines.
+
+#name = str(input('Enter your name: ')).strip().title()
+#age = int(input('Enter your age: '))
+#course = str(input('Enter your course: ')).strip().upper()
+#print(f"your details:\nname:",name,"\nage:",str(age),"\ncourse:",course)
+
+#5.  Message #Customiser with .replace()
+
+#name = str(input("Enter your name: "))
+#course = str(input("Enter your course name: "))
+#name = name.strip(",.#'@")
+#course = course.strip(",.@#./',#")
+#print(f"Hello {name}. Welcome to {course}")
+#print(f"Hello {name.replace(" ","Sarah Will")}.Welcome to {course.replace("python","coding")}")
+
+#6. Shouting and whispering
+#... ask user to type sentence.
+#print the sentence in all uppercase.
+#Print the same sentence in all lowercase.
+#Print the length of the sentence. Use .upper(), .lower(), and len().
+
+#sent=str(input("type one sentence: "))
+#print(sent.upper())
+
+#sent=str(input("type one sentence: "))
+#print(sent.lower())
+
+
+#sent=str(input("type one sentence"))
+#sent=str(input("type one sentence: "))
+#print(len(sent))
+
+#7. Safe Division with Message
+# Ask for two numbers using float(). If the second number is zero, print: "Error: cannot divide by zero"
+# Otherwise print a nicely formatted message with the result using an f-string, e.g. "10.0 divided by 2.0 is 5.0".
+
+#num1=float(input("enter num1: "))
+#num2=float(input("enter num2: "))
+#if num2==0:
+#    print("Error: cannot divide by zero")
+#else:
+#    output = num1 / num2
+#    print(f"{num1} divided by {num2} is {output}")
+
+#5.  Message #Customiser with .replace()
+
+#name = str(input("Enter your name: "))
+#course = str(input("Enter your course name: "))
+#name = name.strip(",.#'@")
+#course = course.strip(",.@#./',#")
+#print(f"Hello {name}. Welcome to {course}")
+#print(f"Hello {name.replace(" ","Sarah Will")}.Welcome to {course.replace("python","coding")}")
+
+
+
+# 8. .Remove spaces
+#  .....convert all higher letters into lower case.
+
+#name = str(input("enter your name:  "))
+#name = name.replace(" ","")
+#print("your name is",name.lower())
+#-------------------------------#
+
+# 9. ASK USER FOR NAME, COURSE , YEAR
+# ... generate 3 - 4  lines letter using triple-quoted f-string ("""...""")
+# ... it should include line breaks and variables.
+# ... use at-least one string method such as title, upper() etc.
+
+#name=str(input("enter your name: "))
+#age=int(input("enter your age: "))
+#course=str(input("enter your course name:  "))
+#year=int(input("year of enrollment year: "))
+
+#print(f"""your name is {name}\nyou are {age} years old.\nyou are enrolled into {course.upper()} in {year}""")
+#print("your name is", name, "\nyou are" ,age, "years old. \nyou are enrolled into", course.upper(), "in",year,)
+
+#10. using name, age, course and write three separate prints outputs.
+# One using +
+# One using commas
+# One using an f-string In comments, note one advantage and one disadvantage of each style.
+
+#name=str(input("enter your name: "))
+#age=int(input("enter your age: "))
+#course=str(input("enter course name: "))
+
+#print("Hello "  +name+  " you are "  +str(age)+  " years old and enrolled in "  +course.upper())
+
+#print(f"Hello {name} you are {age} years old and enrolled in {course.title().upper()}")
+
+#print("Hello",name, "you are" ,age,"years old and you are enrolled into" ,course.upper(),)
