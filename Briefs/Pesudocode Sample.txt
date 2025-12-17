@@ -1,0 +1,57 @@
+STUDENT NUMBER: [ENTER YOUR STUDENT NUMBER HERE]
+STUDENT NAME:   [ENTER YOUR FULL NAME HERE]
+MODULE CODE:    COM4402
+MODULE TITLE:   Programming
+ASSIGNMENT:     Quiz Program Pseudocode (15% of module grade)
+================================================================================
+
+*** IMPORTANT SUBMISSION INSTRUCTIONS ***
+
+SAVE THIS FILE AS: YOUR_STUDENTNUMBER_COM4402_Pseudocode.txt
+Example: 2533125_COM4402_Pseudocode.txt
+
+Submit ONLY to the PSEUDOCODE Moodle submission link (NOT flowchart link).
+
+Requirements Checklist - Tick when complete:
+[ ] Describes ALL 8 required components from assignment brief
+[ ] Uses proper indentation for program structure
+[ ] Written in plain English (no programming language syntax)
+[ ] Data structures explicitly named (LIST, TUPLE, etc.)
+[ ] File saved as .txt format (not Word/PDF)
+[ ] Correct filename format used
+
+*** PROGRAM FLOW DESCRIPTION ***
+
+1. INITIALISATION
+   - Create lists to store quiz questions, multiple choice options, and correct answers
+   - Set score variable to zero
+   - Set question counter to start position
+
+2. MAIN PROGRAM LOOP
+   - Continue until all questions have been presented
+
+3. QUESTION PRESENTATION
+   - Display current question to user
+   - Show all four multiple choice options (A, B, C, D)
+
+4. USER INPUT
+   - Accept student's answer choice from keyboard
+
+5. ANSWER VALIDATION
+   - Compare user's selection against stored correct answer
+   - Decision: is answer correct or incorrect?
+
+6. SCORING PROCESS
+   - If correct: increment score by 1
+   - Display feedback message (correct/incorrect)
+
+7. ITERATION
+   - Move to next question in sequence
+   - Return to step 3 until loop completes
+
+8. PROGRAM TERMINATION
+   - Display final score out of total questions
+   - Calculate and show percentage score
+   - End program
+
+*** PSEUDOCODE STARTS BELOW THIS LINE ***
