@@ -1,0 +1,50 @@
+
+BEGIN
+	PRINT "DISPLAY the question from List"
+	PRINT "DISPLAY options from List"
+	PRINT "INPUT user Option"
+	CONDITION
+	IF 		 option!=options
+		PRINT "Invalid option. Choose option a, b, c or d only"
+	ELSE 
+		IF	answer!=correct
+			PRINT "Your answer is incorrect."
+		ELSE 
+			PRINT "Your answer is correct"
+			PRINT "Score=score+2"
+		
+			PROCESS score = score+2	
+		ENDELSE
+	
+		PROCESS	count= count+1
+		
+		IF count<5
+			PRINT "DISPLAY the question from List"
+			PRINT "DISPLAY options from List"
+			PRINT "INPUT user Option"
+		ELSEIF score=>6
+			PRINT "Congratulation! you have passed the test."
+			PRINT "score='score'/totalscore"
+		ELSE
+			PRINT "Sorry, you have to  retake this  test"
+			PRINT "score='score'/totalscore"
+			PRINT "Press Y if you wish to retake the quiz"
+
+			
+			IF choice==Y
+				PRINT "DISPLAY the question from List"
+				PRINT "DISPLAY options from List"
+				PRINT "INPUT user Option"
+			ELSE
+				PRINT "Thank you for testing your knowledge"
+			ENDELSE
+		ENDELSE
+	ENDELSE
+END
+
+	
+	
+
+
+
+	
