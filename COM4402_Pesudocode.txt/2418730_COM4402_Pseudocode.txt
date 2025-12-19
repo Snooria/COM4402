@@ -1,42 +1,135 @@
+STUDENT NUMBER: [2418730]
+STUDENT NAME:   [Shahana Nooria Bilal]
+MODULE CODE:    COM4402
+MODULE TITLE:   Programming
+ASSIGNMENT:     Quiz Program Pseudocode (15% of module grade)
+================================================================================
+
+*** IMPORTANT SUBMISSION INSTRUCTIONS ***
+
+SAVE THIS FILE AS: YOUR_STUDENTNUMBER_COM4402_Pseudocode.txt
+Example: 2533125_COM4402_Pseudocode.txt
+
+Submit ONLY to the PSEUDOCODE Moodle submission link (NOT flowchart link).
+
+Requirements Checklist - Tick when complete:
+[/] Describes ALL 8 required components from assignment brief
+[/] Uses proper indentation for program structure
+[/] Written in plain English (no programming language syntax)
+[/] Data structures explicitly named (LIST, TUPLE, etc.)
+[/] File saved as .txt format (not Word/PDF)
+[/] Correct filename format used
+
+*** PROGRAM FLOW DESCRIPTION ***
+
+1. INITIALISATION
+   - Create lists to store quiz questions, multiple choice options, and correct answers
+   - Set score variable to zero
+   - Set question counter to start position
+
+2. MAIN PROGRAM LOOP
+   - Continue until all questions have been presented
+
+3. QUESTION PRESENTATION
+   - Display current question to user
+   - Show all four multiple choice options (A, B, C, D)
+
+4. USER INPUT
+   - Accept student's answer choice from keyboard
+
+5. ANSWER VALIDATION
+   - Compare user's selection against stored correct answer
+   - Decision: is answer correct or incorrect?
+
+6. SCORING PROCESS
+   - If correct: increment score by 1
+   - Display feedback message (correct/incorrect)
+
+7. ITERATION
+   - Move to next question in sequence
+   - Return to step 3 until loop completes
+
+8. PROGRAM TERMINATION
+   - Display final score out of total questions
+   - Calculate and show percentage score
+   - End program
+
+*** PSEUDOCODE STARTS BELOW THIS LINE ***
+-----------------------------------------
+-----------------------------------------
+
+
 BEGIN
-	PRINT "DISPLAY the question from List"
-	PRINT "DISPLAY options from List"
-	PRINT "INPUT user Option"
-	CONDITION
+
+--initialize values
+	List_question_text
+	List_multiple_options
+	List_correct_answers
+	
+-- counters 
+	count=0
+	score=0
+	
+	
+-- condition for loop
+
+	IF user_option!=options
+	back to multiple_options
+
+	IF count<5
+	count = count+1
+	
+	IF user_input_answer=correct
+	score= score+2
+	
+	IF score=>6
+	PRINT "you have passed the test"
+	ELSE "Failed"
+
+
+	IF choice==Y
+	loop back to count to restart the quiz
+	ELSE End the quiz
+	
+------------------------------
+	
+	
+	PRINT "question text"
+	PRINT "options"
+	INPUT "user_Option"
+	
 	IF 		 option!=options
 		PRINT "Invalid option. Choose option a, b, c or d only"
-	ELSE 
-		IF	answer!=correct
-			PRINT "Your answer is incorrect."
+	ELSE
+		IF	user_answer!=correct
+			no score addition
 		ELSE 
-			PRINT "Your answer is correct"
-			PRINT "Score=score+2"
+			PROCESS Score=score+2
+		EndELSE
 		
-			PROCESS score = score+2	
-		ENDELSE
-	
-		PROCESS	count= count+1
+		PROCESS count = count+1
 		
-		IF count<5
-			PRINT "DISPLAY the question from List"
-			PRINT "DISPLAY options from List"
-			PRINT "INPUT user Option"
-		ELSEIF score=>6
+		IF Count<5
+			keep looping
+		ELSEIF
+			score=>6
 			PRINT "Congratulation! you have passed the test."
 			PRINT "score='score'/totalscore"
 		ELSE
 			PRINT "Sorry, you have to  retake this  test"
 			PRINT "score='score'/totalscore"
-			PRINT "Press Y if you wish to retake the quiz"
-
+			PRINT "Press Y if you wish to retake the quiz"	
 			
 			IF choice==Y
-				PRINT "DISPLAY the question from List"
-				PRINT "DISPLAY options from List"
-				PRINT "INPUT user Option"
+				PRINT "question text"
+				PRINT "options"
+				INPUT "user_Option"
 			ELSE
 				PRINT "Thank you for testing your knowledge"
-			ENDELSE
-		ENDELSE
-	ENDELSE
+			END			
+		END
+		
+	END
 END
+----------------------------------------------------------------------
+----------------------------------------------------------------------
