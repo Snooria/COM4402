@@ -1,4 +1,4 @@
-from win32con import PASSTHROUGH
+
 
 #The for loop controls how many times we repeat
 #Inside the loop, we can use input, if, strings, math
@@ -190,6 +190,19 @@ from win32con import PASSTHROUGH
 # how many are Distinction (≥70) Print all three results.
 
 
+# n= int(input("enter value of number_students:"))
+# total = 0
+#
+#
+# for i in range(n):
+#     marks= int(input("enter marks: "))
+
+
+
+
+
+
+
 
 
 
@@ -200,8 +213,27 @@ from win32con import PASSTHROUGH
 
 
 ##----------------------------------------------------##
-# 10. Simple Text-Based Bar Chart Ask how many numbers to enter, then input that many positive integers
-# into a list. Use a for loop to print a tiny bar chart using *, e.g. if the list is [3, 5, 1], output:
+# 10. Simple Text-Based Bar Chart Ask how many numbers to enter, then input that many positive integers into a list.
+# Use a for loop to print a tiny bar chart using *, e.g. if the list is [3, 5, 1], output:
 # ***
 # *****
 # *
+
+# n = int(input("give number to value n: "))
+# numbers=[]
+#
+# for i in range(n):
+#     num = int(input(f"enter integer {i + 1} of {n}: "))
+#     numbers.append(num)
+#
+# for num in numbers:
+#     print('*' * num)
+
+
+
+
+
+
+
+
+
