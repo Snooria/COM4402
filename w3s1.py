@@ -98,6 +98,32 @@
 # Use a for loop over the string to count
 # how many characters are not spaces, then print the count.
 
+# sentence= str(input("write a sentence: ")).lower()
+# res = 0
+# for ch in sentence:
+#     if ch != " ":
+#         res += 1
+# print(res)
+
+#-------------------------------------------------#
+
+# 5. Find Maximum Mark
+# Ask how many marks the user will enter.
+# then read that many integers.
+# Use a forloop to find and print the highest mark entered.
+
+# m= int(input("how many marks would you like to enter: "))
+# highestMark = 0
+# for i in range(m):
+#     marks=int(input("enter marks: "))
+#     if marks > highestMark:
+#         highestMark = marks
+# print(f"your highest mark is: {highestMark}")
+
+# 6. Filter Passing Marks
+# Ask how many marks to enter,
+# then read that many integers. Using a for loop,
+# print only the marks that are 40 or above, one per line, and count how many passed.
 
 
 
@@ -109,8 +135,21 @@
 
 
 
-# 5. Find Maximum Mark Ask how many marks the user will enter, then read that many integers. Use a for
-# loop to find and print the highest mark entered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 6. Filter Passing Marks Ask how many marks to enter, then read that many integers. Using a for loop,
 # print only the marks that are 40 or above, one per line, and count how many passed.
 # 7. Reverse a String (Manual) Ask the user for a word. Use a for loop (not slicing) to build a new string
