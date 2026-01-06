@@ -1,3 +1,4 @@
+from win32con import PASSTHROUGH
 
 #The for loop controls how many times we repeat
 #Inside the loop, we can use input, if, strings, math
@@ -119,49 +120,86 @@
 #     if marks > highestMark:
 #         highestMark = marks
 # print(f"your highest mark is: {highestMark}")
+ #----------------------------------------#
 
 # 6. Filter Passing Marks
 # Ask how many marks to enter,
 # then read that many integers. Using a for loop,
 # print only the marks that are 40 or above, one per line, and count how many passed.
 
+# n =int(input("how many times you want to enter the number?: "))
+# pass_count = 0
+# fail_count = 0
+#
+#
+# for i in range(n):
+#     num=int(input(f"Enter number {i+1} of {n}: "))
+#     if num >= 40:
+#         print(f"pass: {num}")
+#         pass_count += 1
+#     else:
+#         fail_count += 1
+# print(f"pass candidates: {pass_count} ")
+# print(f"fail candidates: {fail_count} ")
+
+###------------------------------------#####
+
+# 7. Reverse a String (Manual)
+# Ask the user for a word.
+# Use a for loop (not slicing) to build a new string
+# that is the reverse of the original,
+# then print it.
+
+# word =str(input("write a word: ")).lower()
+# res = ""
+# for word in reversed(word):
+#     res += word + ""
+#
+# res = res.strip()
+# print(res)
 
 
+##------------------------------##
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 6. Filter Passing Marks Ask how many marks to enter, then read that many integers. Using a for loop,
-# print only the marks that are 40 or above, one per line, and count how many passed.
-# 7. Reverse a String (Manual) Ask the user for a word. Use a for loop (not slicing) to build a new string
-# that is the reverse of the original, then print it.
-# 8. Count Specific Letter in a List of Names Ask how many names to enter; store them in a list. Then ask
-# for a letter (e.g. "a"). Use a for loop to count how many names contain that letter (case-insensitive)
+# 8. Count Specific Letter in a List of Names
+# Ask how many names to enter; store them in a list.
+# Then ask for a letter (e.g. "a").
+# Use a for loop to count how many names contain that letter (case-insensitive)
 # and print the total.
-# 9. Grade Statistics Ask for the number of students, then input that many marks (0–100). Use a for loop
-# to compute:
+
+# n = int(input("give value to n: "))
+# students= []
+# letter_count= 0
+# for i in range(n):
+#     name =  str(input(f"enter name {i+1} of {n} to store in database: "))
+#     students.append(name)
+#
+# letter= str(input("which letter you want to count?: ")).lower()
+# for name in students:
+#     if letter in name:
+#         letter_count = letter_count+1
+# print(f"number of names in students database containing letter {letter} are {letter_count}")
+#-------------------------------------------#
+
+##------------------------------------------##
+# 9. Grade Statistics
+# Ask for the number of students, then input that many marks (0–100).
+# Use a for loop to compute:
 # total marks
 # average mark
 # how many are Distinction (≥70) Print all three results.
+
+
+
+
+
+
+
+
+
+
+
+##----------------------------------------------------##
 # 10. Simple Text-Based Bar Chart Ask how many numbers to enter, then input that many positive integers
 # into a list. Use a for loop to print a tiny bar chart using *, e.g. if the list is [3, 5, 1], output:
 # ***
