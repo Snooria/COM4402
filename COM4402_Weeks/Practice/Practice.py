@@ -106,6 +106,15 @@
 # print("guesses: ", " ".join(guesses))
 
 
+# for i in range(5):
+#     number = int(input("Enter a number: "))
+#     print("You entered:", number)
+
+#----------------------------------#
+#-----------------------------------#
+
+#Menu#
+
 
 
 
