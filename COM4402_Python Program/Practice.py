@@ -246,13 +246,182 @@ from turtledemo.round_dance import stop
 #         break
 # print(f"names stored in database:", names)
 #-------------------------------------------------#
+#-------------------------------------------------#
+#-------------------------------------------------#
 
 # Mini Design Task – Simple Login Menu
+#Design a program that:
+
+# Shows a menu:
+# 1. Login
+# 0. Exit
+# If user chooses 1:
+# Ask for username and password
+# Check them against stored values
+# Say success or failure
+# Menu repeats until user chooses 0
+# Use a while loop around the menu.
+#
+# Stretch:
+# Use a do-while style pattern for the login attempts.
+
+# user_name_password ={'harry': 'ha123',
+#                      'saima': 'sa236',
+#                      'paige': 'pa123'}
+#
+# print("--------------Menu-------------------")
+#
+# while True:
+#     choice=int(input("Enter your choice: "))
+#     if choice==1:
+#         print("Login")
+#         username = input("Enter your username: ")
+#         password = input("Enter your password: ")
+#         if username in user_name_password and password == user_name_password[username]:
+#             print("Welcome " + username + "!")
+#             print("login successful")
+#             break
+#         else:
+#             print("Wrong username or password")
+#     elif choice==2:
+#         print("Exit")
+#     print("thanks")
+
+##-------------------------------------##
+##------------------------------------##
+##-----------------------------------##
+
+## nested loops ###
+
+# Single for Loops
+# names = ["Aisha", "Bilal", "Chen"]
+# for name in names:
+#     print("Hello", name)
 
 
+# A nested loop is:
+# A loop inside another loop.
+# Analogy:
+# Outer loop = rows in a grid
+# Inner loop = columns in each row
+# For each row, we run through all columns
 
+# for i in range(4):
+#     for j in range(3):
+#         print("*", end="")
+#     print()
 
+#  Right-Angled Triangle of Stars
 
+# rows = 5
+# for i in range(1, rows+1):
+#     for j in range(i):
+#         print("*", end="")
+#     print()
+####-----------------------######
+####-----------------------######
+
+# rows=5
+#
+# for i in range(1, rows+1):
+#     for j in range(i):
+#         print(i,end="")
+#     print()
+
+####-----------------####
+####-----------------####
+
+#
+# user_name_password =[
+#                     ['harry', 'ha123'],
+#                     ['saima', 'sa123'],
+#                     ['paige', 'pa123']
+#     ]
+#
+#
+#
+#
+# print("--------------Menu-------------------")
+#
+# while True:
+#     print("1.Login\n2.Exit")
+#
+#     choice=int(input("Enter your choice: "))
+#     if choice==1:
+#         print("---Login---")
+#         username = input("Enter your username: ")
+#         password = input("Enter your password: ")
+#         for user in user_name_password:
+#             if username == user[0] and password == user[1]:
+#                 print("Welcome " + username + "!!")
+#                 print("login successful")
+#                 break
+#         else:
+#             print("Wrong username or password")
+#
+#     elif choice==2:
+#         print("---Signup---")
+#         username = str(input(f"Enter username:  "))
+#         password = input("make strong password: ")
+#         user_name_password.append([username, password])
+#         print("signup successful!")
+#
+#     print("thanks")
+
+####--------------------------###
+# file creation to store user input data.
+# user_data=[ ['syeda' , 'sy123'],
+#             ['bushra', 'bu123'],
+#             ]
+# f=open("user_data.txt","w")
+#
+#
+# username = str(input(f"Enter username:  "))
+# user_data.append(username)
+# password = input("make strong password: ")
+# user_data.append(password)
+# with open("user_data.txt","a") as f:
+#     f.write(f"{username},{password}\n")
+# print("sign up successfully stored")
+#
+# f.close()
+
+####
+# file handling in python ; r,w,a, x create.
+# user_name_password =[
+#                     ['harry', 'ha123'],
+#                     ['saima', 'sa123'],
+#                     ['paige', 'pa123']
+#                     ]
+#
+# with open('user_data.txt', 'r') as f:
+#
+#         while True:
+#             print("1.Login\n2.Signup")
+#
+#             choice=int(input("Enter your choice: "))
+#             if choice==1:
+#                 print("---Login---")
+#                 username = input("Enter your username: ")
+#                 password = input("Enter your password: ")
+#                 for user in user_name_password:
+#                     if username == user[0] and password == user[1]:
+#                         print("Welcome " + username + "!!")
+#                         print("login successful")
+#                         break
+#                 else:
+#                     print("Wrong username or password")
+#
+#             elif choice == 2:
+#                 with open('user_data.txt', 'a') as f:
+#                     print("---Signup---")
+#                     username = str(input(f"Enter username:  "))
+#                     password = input("make strong password: ")
+#                     user_name_password.append([username, password])
+#                     f.write(f"{username},{password}\n")
+#                     print("signup successful!")
+#
+#             print("thanks")
 
 
 
