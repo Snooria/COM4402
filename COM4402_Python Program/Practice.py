@@ -422,6 +422,79 @@ from turtledemo.round_dance import stop
 #                     print("signup successful!")
 #
 #             print("thanks")
+########-----------------------------------------------------------###############
+
+
+# menu with choices
+
+# while True:
+#     choice = int(input(f"     MENU     \n1.Quiz\n2.Score\n3.Exit\nMake a choice: "))
+#     if choice== 1:
+#         print("Quiz")
+#         break
+#     elif choice== 2:
+#         print("Score")
+#         break
+#     elif choice== 3:
+#         print("Exiting")
+#         break
+#     else:
+#         print("Invalid input")
+
+# while True:
+#     choice = int(input("     MENU     \n1.Quiz\n2.Score\n3.Exit\nMake a choice: "))
+#     try:
+#         choice = int(choice)
+#         break
+#     except ValueError:
+#         print("Invalid input! Please enter a number.")
+#
+#         if choice == 1:
+#                 print("Quiz")
+#                 break
+#         elif choice== 2:
+#                 print("Score")
+#                 break
+#         elif choice== 3:
+#                 print("Exiting")
+#                 break
+#         else:
+#                 print("Invalid input")
+
+###------------------------##
+##-------------------------##
+
+
+# while True:
+#    print(f"     MENU     \n1.Quiz\n2.Score\n3.Exit")
+#
+#    try:
+#       choice = int(input("Enter your choice:"))
+#    except ValueError:
+#       print("please enter valid input")
+#       continue
+#    if choice == 1:
+#       print("Quiz")
+#       break
+#    elif choice== 2:
+#       print("Score")
+#       break
+#    elif choice== 3:
+#       print("Exiting")
+#       break
+#
+#    else:
+#       print("Invalid input")
+
+
+
+
+
+
+
+
+
+
 
 
 

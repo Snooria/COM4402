@@ -1,4 +1,5 @@
 # ---------------------Holton's Quiz Program-----------------------#
+from turtledemo.round_dance import stop
 
 count=0
 score=0
@@ -9,14 +10,14 @@ user_name_password =[
                     ['saima', 'sa123'],
                     ['paige', 'pa123']
     ]
-print("--------------Menu-------------------")
+# print("--------------Menu-------------------")
 # List is being used to store the data and can be appended by adding new users data who want to sign up for first time.
 # data could be stored and retrieve if file handling is implemented which requires few more explanations.
 # A new variable users is being created to check user input in list user_name_password if it does exist and match to help user login.
 #
 
 
-
+#
 while True:
     print("1.Login\n2.Signup")
 
@@ -29,7 +30,27 @@ while True:
             if username == user[0] and password == user[1]:
                 print("Welcome " + username + "!!")
                 print("You are successfully logged in..!!!")
-                break
+                while True:
+                    print(f"------MENU------\n----------------\n1.Quiz\n2.Score\n3.Exit")
+
+                    try:
+                        option = int(input("Enter your choice: "))
+                    except ValueError:
+                        print("please enter valid input")
+                        continue
+                    if option == 1:
+                        print("Quiz")
+                        break
+                    elif option == 2:
+                        print("Score")
+                        break
+                    elif option == 3:
+                        print("Exiting")
+                        break
+
+                    else:
+                        print("Invalid input")
+
         else:
             print("Wrong username or password")
     elif choice==2:
@@ -38,22 +59,38 @@ while True:
         password = input("make strong password: ")
         user_name_password.append([username, password])
         print("signup successful!")
-        print("thanks")
 
-    print()
+
+        print()
 #--------------------------------#
 
 
+###########MENU################
 
-# if choice == "A":
-#     username = str(input("Enter your name: "))
-#     password = str,int(input("Enter your password: "))
-# elif choice == "B":
-#     print("Login to Holton")
-#     username = str(input("Please enter your login: "))
-#     password = str,int(input("Please enter your password: "))
+#applied try-except handling tool to prevent code from crashing.
+# else-if statements will prompt to the right tab according to user input.
 
 
+# while True:
+#    print(f"------MENU------\n----------------\n1.Quiz\n2.Score\n3.Exit")
+#
+#    try:
+#        option = int(input("Enter your choice: "))
+#    except ValueError:
+#       print("please enter valid input")
+#       continue
+#    if option == 1:
+#       print("Quiz")
+#       break
+#    elif option== 2:
+#       print("Score")
+#       break
+#    elif option== 3:
+#       print("Exiting")
+#       break
+#
+#    else:
+#       print("Invalid input")
 
 
 
