@@ -14,10 +14,11 @@ user_name_password =[
 # List is being used to store the data and can be appended by adding new users data who want to sign up for first time.
 # data could be stored and retrieve if file handling is implemented which requires few more explanations.
 # A new variable users is being created to check user input in list user_name_password if it does exist and match to help user login.
-#
+# try-except handling tool is applied to prevent code from crashing.
+# else-if conditional statements will prompt to the right tab according to user input.
 
 
-#
+
 while True:
     print("1.Login\n2.Signup")
 
@@ -40,7 +41,52 @@ while True:
                         continue
                     if option == 1:
                         print("Quiz")
+                        questions = [
+                            "1. who is the father of computer?",
+                            "2. what is the brain of a computer?",
+                            "3. who are you?"
+                        ]
+                        options = [
+                            ["A. Charles Babbage", "B. James Hortons", "C. Bill Gates", "D.Dennis James"],
+                            ["A. CPU", "B. RAM", "C.GPU"],
+                            ["A. Human", "B. Alien", "C.Animal"]
+                        ]
+                        answers = ["A", "A", "A"]
+                        choices = []
+                        score = 0
+                        count_question = 0
+
+                        for question in questions:
+                            print("------------------------------")
+                            print(question)
+                            for option in options[count_question]:
+                                print(option)
+                            print("")
+                            choice = input("Choose the right option: ").upper()
+                            choices.append(choice)
+                            if choice == answers[count_question]:
+                                score += 1
+                                print("correct answer!!")
+                            else:
+                                print("wrong answer!!")
+                                print("")
+                                print(f"Right answer is: {answers[count_question]}")
+                            count_question += 1
+
+                        print("-----------------------------------")
+                        print("------------RESULTS----------------")
+                        print("-----------------------------------")
+
+                        print("Answers: ", end="")
+                        for answer in answers:
+                            print(answer, end=" ")
+                        print()
+                        print("Choices: ", end="")
+                        for choice in choices:
+                            print(choice, end=" ")
+                        print()
                         break
+
                     elif option == 2:
                         print("Score")
                         break
@@ -50,7 +96,7 @@ while True:
 
                     else:
                         print("Invalid input")
-
+                break
         else:
             print("Wrong username or password")
     elif choice==2:
@@ -59,9 +105,9 @@ while True:
         password = input("make strong password: ")
         user_name_password.append([username, password])
         print("signup successful!")
+        break
 
 
-        print()
 #--------------------------------#
 
 

@@ -463,8 +463,9 @@ from turtledemo.round_dance import stop
 
 ###------------------------##
 ##-------------------------##
-
-
+                #############
+                # menu done #
+                #############
 # while True:
 #    print(f"     MENU     \n1.Quiz\n2.Score\n3.Exit")
 #
@@ -485,6 +486,85 @@ from turtledemo.round_dance import stop
 #
 #    else:
 #       print("Invalid input")
+
+########-------------------------------------#########
+##--##--##--##
+# functions that we need.
+
+# def new_quiz():
+#     pass
+# def check_answer():
+#     pass
+# def display_score():
+#     pass
+# def re_attempt():
+#     pass
+#
+# questions_index=[
+#     "1", "who is the father of computer?"
+#     "2", "what is the brain of a computer?"
+#     "3", "who are you?"
+# ]
+# options_index=[
+#     ["A. Charles Babbage", "B. James Hortons", "C. Bill Gates", "D.Dennis James"],
+#     ["A. CPU", "B. RAM", "C.GPU"],
+#     ["A. Human", "B. Alien", "C.Animal"]
+#
+# ]
+#----------------------------------------------------------#
+# questions= [
+#         "1. who is the father of computer?",
+#         "2. what is the brain of a computer?",
+#         "3. who are you?"
+# ]
+# options= [
+#     ["A. Charles Babbage", "B. James Hortons", "C. Bill Gates", "D.Dennis James"],
+#     ["A. CPU", "B. RAM", "C.GPU"],
+#     ["A. Human", "B. Alien", "C.Animal"]
+# ]
+# answers= ["A", "A", "A"]
+# choices=[]
+# score=0
+# count_question=0
+#
+# for question in questions:
+#     print("------------------------------")
+#     print(question)
+#     for  option in options[count_question]:
+#         print(option)
+#     print("")
+#     choice=input("Choose the right option: ").upper()
+#     choices.append(choice)
+#     if choice == answers[count_question]:
+#         score+=1
+#         print("correct answer!!")
+#     else:
+#         print("wrong answer!!")
+#         print("")
+#         print(f"Right answer is: {answers[count_question]}")
+#     count_question+=1
+#
+# print("-----------------------------------")
+# print("------------RESULTS----------------")
+# print("-----------------------------------")
+#
+# print("Answers: ", end="")
+# for answer in answers:
+#     print(answer, end=" ")
+# print()
+# print("Choices: ", end="")
+# for choice in choices:
+#     print(choice, end=" ")
+# print()
+
+
+
+
+
+
+
+
+
 
 
 
