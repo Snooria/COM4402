@@ -1,4 +1,5 @@
 # ---------------------Holton's Quiz Program-----------------------#
+from idlelib.mainmenu import menudefs
 from turtledemo.round_dance import stop
 
 
@@ -6,6 +7,7 @@ count=0
 score=0
 total=6
 option=""
+user_input=''
 print("--------------------Welcome to Holton's Quiz-------------------")
 # choice= str(input("options:\nA.Signup\nB.Login\nChoose the option: "))
 user_name_password =[
@@ -13,6 +15,12 @@ user_name_password =[
                     ['saima', 'sa123'],
                     ['paige', 'pa123']
     ]
+
+#--------------------------------#
+#functions
+
+def quiz_results():
+    print("...View detailed Results....")
 # print("--------------Menu-------------------")
 # List is being used to store the data and can be appended by adding new users data who want to sign up for first time.
 # data could be stored and retrieve if file handling is implemented which requires few more explanations.
@@ -89,50 +97,60 @@ while True:
                         for choice in choices:
                             print(choice, end=" ")
                         print()
-
                         # # TOTALING AND PASS/FAIL CRITERIA ON BASIS OF PERCENTAGES# #
                         print("Total score:",score, "out of", total)
-                        percentage= (score/total)*100
-                        # print(f"percentage :{percentage:.2f}")
+                        if score>=4:
+                            print("Pass!")
+                        else:
+                            print("Fail!")
                         print()
 
+                        #------- CALL THE FUNCTION TO DISPLAY RESULTS WITH PERCENTAGE###
 
-                        ###-------Results----####
-                    elif option == 2:
-                        print("-----Detailed Results-----")
+                        while score == 'pass':
+                            user_input = input("Press 1 if you wish to view detailed results: ")
+                        if user_input != 1:
+                            print("Level_2")
+                            print("questions")
+                        # else:
+                        #     def quiz_results()
+
+
+
+                    elif  option == 2:
+                        print("---Detailed Results---")
+
+                        percentage = (score / total) * 100
+                        # print(f"percentage :{percentage:.2f}")
+                        # print()
 
                         if percentage < 40:
                             print("------Results-----")
                             print(f"user name: {username}")
                             print("Unfortunately, you have to retake the test")
-                            print("Results: Grade: D", "", "score:", score, "/", total, "Percentage",
-                                  f"{percentage:.2f}")
+                            print("Results: Grade: D", "", "score:", score, "/",total, "Percentage", f"{percentage:.2f}")
                         elif (percentage > 40 and percentage < 50):
                             print("------Results-----")
                             print(f"user name: {username}")
                             print("You have passed the test by getting grade C")
-                            print("Results: Grade: C", "", "score:", score, "/", total, "Percentage",
-                                  f"{percentage:.2f}")
+                            print("Results: Grade: C", "", "score:", score, "/",total, "Percentage", f"{percentage:.2f}")
                         elif percentage > 50 and percentage < 70:
                             print("------Results-----")
                             print(f"user name: {username}")
                             print("You have passed the test by getting grade B")
-                            print("Results: Grade: B", "", "score:", score, "/", total, "Percentage",
-                                  f"{percentage:.2f}")
+                            print("Results: Grade: B", "", "score:", score, "/",total, "Percentage", f"{percentage:.2f}")
                         elif percentage > 70 and percentage < 80:
                             print("------Results-----")
                             print(f"user name: {username}")
                             print("Well done! You have passed the test by getting grade A")
-                            print("Results: Grade: A", "", "score:", score, "/", total, "Percentage",
-                                  f"{percentage:.2f}")
+                            print("Results: Grade: A", "", "score:", score,"/",total, "Percentage", f"{percentage:.2f}")
                         elif percentage > 80:
                             print("------Results-----")
                             print(f"user name: {username}")
                             print("Excellent! You have passed the test by getting grade A+")
                             print("Results: Grade: A+", "", "score:", score, "", "Percentage", f"{percentage:.2f}")
+
                         break
-
-
 
 
                     elif option == 3:
