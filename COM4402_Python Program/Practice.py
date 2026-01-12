@@ -525,6 +525,7 @@ from turtledemo.round_dance import stop
 # answers= ["A", "A", "A"]
 # choices=[]
 # score=0
+# total=6
 # count_question=0
 #
 # for question in questions:
@@ -536,7 +537,7 @@ from turtledemo.round_dance import stop
 #     choice=input("Choose the right option: ").upper()
 #     choices.append(choice)
 #     if choice == answers[count_question]:
-#         score+=1
+#         score+=2
 #         print("correct answer!!")
 #     else:
 #         print("wrong answer!!")
@@ -556,6 +557,40 @@ from turtledemo.round_dance import stop
 # for choice in choices:
 #     print(choice, end=" ")
 # print()
+#
+#
+#=----------------------------====######
+# TOTALING AND PASS/FAIL CRITERIA ON BASIS OF PERCENTAGES#
+# print("Total score:",score, "out of", total)
+#
+# # convert the score into percentage and then decide whether the user pass or failed the quiz.
+# print("Total score:",score, "out of", total)
+# percentage= (score/total)*100
+# print(f"percentage :{percentage:.2f}")
+# print()
+#
+# if percentage<40:
+#     print("Unfortunately, you have to retake the test")
+#     print("Results: Grade: D","", "score:", score, "", "Percentage",f"{percentage:.2f}")
+# elif(percentage>40 and percentage<50):
+#     print("You have passed the test by getting grade C")
+#     print("Results: Grade: C","","score:", score, "", "Percentage",f"{percentage:.2f}")
+# elif percentage>50 and percentage<70:
+#     print("You have passed the test by getting grade B")
+#     print("Results: Grade: B","", "score:", score, "", "Percentage",f"{percentage:.2f}")
+# elif percentage>70 and percentage<80:
+#     print("Well done! You have passed the test by getting grade A")
+#     print("Results: Grade: A","","score:", score, "", "Percentage",f"{percentage:.2f}")
+# elif percentage>80:
+#     print("Excellent! You have passed the test by getting grade A+")
+#     print("Results: Grade: A+","", "score:", score, "", "Percentage",f"{percentage:.2f}")
+
+######---------------------------------------------------------------------------#####
+
+
+
+
+
 
 
 

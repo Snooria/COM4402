@@ -1,8 +1,11 @@
 # ---------------------Holton's Quiz Program-----------------------#
 from turtledemo.round_dance import stop
 
+
 count=0
 score=0
+total=6
+option=""
 print("--------------------Welcome to Holton's Quiz-------------------")
 # choice= str(input("options:\nA.Signup\nB.Login\nChoose the option: "))
 user_name_password =[
@@ -38,7 +41,6 @@ while True:
                         option = int(input("Enter your choice: "))
                     except ValueError:
                         print("please enter valid input")
-                        continue
                     if option == 1:
                         print("Quiz")
                         questions = [
@@ -51,6 +53,8 @@ while True:
                             ["A. CPU", "B. RAM", "C.GPU"],
                             ["A. Human", "B. Alien", "C.Animal"]
                         ]
+
+                        # Quiz Loop
                         answers = ["A", "A", "A"]
                         choices = []
                         score = 0
@@ -65,7 +69,7 @@ while True:
                             choice = input("Choose the right option: ").upper()
                             choices.append(choice)
                             if choice == answers[count_question]:
-                                score += 1
+                                score += 2
                                 print("correct answer!!")
                             else:
                                 print("wrong answer!!")
@@ -77,15 +81,37 @@ while True:
                         print("------------RESULTS----------------")
                         print("-----------------------------------")
 
-                        print("Answers: ", end="")
+                        print("Correct Answers: ", end="")
                         for answer in answers:
                             print(answer, end=" ")
                         print()
-                        print("Choices: ", end="")
+                        print("User Choices: ", end="")
                         for choice in choices:
                             print(choice, end=" ")
                         print()
+                        # # TOTALING AND PASS/FAIL CRITERIA ON BASIS OF PERCENTAGES# #
+                        print("Total score:",score, "out of", total)
+                        percentage= (score/total)*100
+                        print(f"percentage :{percentage:.2f}")
+                        print()
+
+                        if percentage<40:
+                            print("Unfortunately, you have to retake the test")
+                            print("Results: Grade: D","", "score:", score, "", "Percentage",f"{percentage:.2f}")
+                        elif(percentage>40 and percentage<50):
+                            print("You have passed the test by getting grade C")
+                            print("Results: Grade: C","","score:", score, "", "Percentage",f"{percentage:.2f}")
+                        elif percentage>50 and percentage<70:
+                            print("You have passed the test by getting grade B")
+                            print("Results: Grade: B","", "score:", score, "", "Percentage",f"{percentage:.2f}")
+                        elif percentage>70 and percentage<80:
+                            print("Well done! You have passed the test by getting grade A")
+                            print("Results: Grade: A","","score:", score, "", "Percentage",f"{percentage:.2f}")
+                        elif percentage>80:
+                            print("Excellent! You have passed the test by getting grade A+")
+                            print("Results: Grade: A+","", "score:", score, "", "Percentage",f"{percentage:.2f}")
                         break
+
 
                     elif option == 2:
                         print("Score")
@@ -105,7 +131,7 @@ while True:
         password = input("make strong password: ")
         user_name_password.append([username, password])
         print("signup successful!")
-        break
+
 
 
 #--------------------------------#
