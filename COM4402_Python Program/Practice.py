@@ -589,22 +589,33 @@ from turtledemo.round_dance import stop
 ######---------------------------------------------------------------------------#####
 # maximum three attempts to pass the test. else locked out for fifteen minutes.
 # to view detailed results, click enter to move to records tab.
-result=""
+# result=""
 
 
-while True:
-    if result=='pass':
-        results=str(input("Press 1 if you wish to view detailed results or 2 to move to next level: "))
-        if results == "1":
-            print("Level 1 results")
-            break
-        elif results == "2":
-            print("Quiz__Level 2 ")
-            break
-        else:
-            stop()
-    else:
-        print("Press 3 to exit")
+# while True:
+#     if result=='pass':
+#         results=str(input("Press 1 if you wish to view detailed results or 2 to move to next level: "))
+#         if results == "1":
+#             print("Level 1 results")
+#             break
+#         elif results == "2":
+#             print("Quiz__Level 2 ")
+#             break
+#         else:
+#             stop()
+#     else:
+#         print("Press 3 to exit")
+
+
+#######FUNCTIONS####
+
+def greet():
+    print("Hello!")
+
+# calling the function
+greet()
+greet()
+
 
 
 
