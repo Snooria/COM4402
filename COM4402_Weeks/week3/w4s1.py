@@ -7,7 +7,7 @@
 #
 # count = add_one(count)
 # print("Outside:", count)
-from sympy.physics.units import amount
+# from sympy.physics.units import amount
 
 
 #message = ""
@@ -106,8 +106,9 @@ from sympy.physics.units import amount
 #
 # # Activities on Functions and Variable Scope#
 #
-# # Activity 1 – Fix the Greeting
-#Activity 3 – Complete the Function
+# Activity 1 – Fix the
+
+# Activity 3 – Complete the Function
 # def area_of_rectangle(width, height):
 #   area = (width * height)
 #   return area
