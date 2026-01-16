@@ -53,24 +53,50 @@
 
 # Activity 1 – Student Marks (SOLVED EXAMPLE)
 #CRUD Functions
-my_dictionary = {
-    'name:harry':56,
-    'name:charlie':62,
-    'name:schism':70,
-    'Sarah':50,
-    'william':42
-}
+# my_dictionary = {
+#     'harry'  : 56,
+#     'charlie': 62,
+#     'schism':70,
+#     'Sarah':50,
+#     'william':42
+# }
+# # print(my_dictionary)
+#
+# name=str(input("enter your name: "))
+# if name in my_dictionary:
+#     print(my_dictionary[name])
+# else:
+#     print("your name is not in the dictionary")
+
+
+#update#
 # my_dictionary.update({"Maria": 63})
 # print(my_dictionary)
 #---------------------------#
-# my_dictionary.pop('Sarah')
+# #delete#
+# my_dictionary.pop('harry')
 # print(my_dictionary)
 #---------------------------#
+#retrieve information by using key#
 #call some specific information
-# if "william" in my_dictionary:
-#     print("william",my_dictionary["william"])
+# if "name" in my_dictionary:
+#     print("name",my_dictionary["name"])
 
-#2nd way to retrieve data.
+#-------------------------------------------------------------------##
+my_dictionary = {
+    'harry'  : 56,
+    'charlie': 62,
+    'schism':70,
+    'Sarah':50,
+    'william':42
+}
+#function
+
+# def add_mark(marks,name,mark):
+#     marks[name]=mark
+#     return marks
+# name=input("enter your name: ")
+
 
 
 

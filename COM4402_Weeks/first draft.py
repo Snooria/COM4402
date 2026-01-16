@@ -4,7 +4,7 @@ from turtledemo.round_dance import stop
 
 count=0
 score=0
-total_score=4
+total=6
 option=""
 print("--------------------Welcome to Holton's Quiz-------------------")
 # choice= str(input("options:\nA.Signup\nB.Login\nChoose the option: "))
@@ -43,77 +43,58 @@ while True:
                         print("please enter valid input")
                     if option == 1:
                         print("Quiz")
-                        questions = [{"""2. Which software is used for creating and managing spreadsheets???
-a. Microsoft Excel
-                        b. Microsoft PowerPoint
-                        c. Adobe Illustrator
-                        d. Google Drive""": "b"},
-                        {"""1.what is name of American president?
-                        a. william Harold
-                        b. Donald Trump
-                        c. George Bush""": "b"}]
+                        questions = [
+                            "1. who is the father of computer?",
+                            "2. what is the brain of a computer?",
+                            "3. who are you?"
+                        ]
+                        options = [
+                            ["A. Charles Babbage", "B. James Hortons", "C. Bill Gates", "D.Dennis James"],
+                            ["A. CPU", "B. RAM", "C.GPU"],
+                            ["A. Human", "B. Alien", "C.Animal"]
+                        ]
 
-                        for i in questions:
-                            print("\n".join(i))
-                            print()
-                            flag1 = input("--Do you want to skip the question(Yes/No)?:").lower()
-                            if flag1 == 'yes':
-                                continue
-                            answer = input("enter the answer(a/b/c/d): ")
-                            if answer == questions:
-                                print()
-                                print("correct answer you got +2")
-                                score = score + 2
-                                print()
+                        # Quiz Loop
+                        answers = ["A", "A", "A"]
+                        choices = []
+                        score = 0
+                        count_question = 0
+
+                        for question in questions:
+                            print("------------------------------")
+                            print(question)
+                            for option in options[count_question]:
+                                print(option)
+                            print("")
+                            choice = input("Choose the right option: ").upper()
+                            choices.append(choice)
+                            if choice == answers[count_question]:
+                                score += 2
+                                print("correct answer!!")
                             else:
-                                print()
-                                print("wrong answer")
-                            flag2 = input("--Do you want to quit the quiz(Yes/No)?:").lower()
-                            if flag2 == 'yes':
-                                break
-                        print("Total score is:", score, "/", total_score)
+                                print("wrong answer!!")
+                                print("")
+                                print(f"Right answer is: {answers[count_question]}")
+                            count_question += 1
 
+                        print("-----------------------------------")
+                        print("------------RESULTS----------------")
+                        print("-----------------------------------")
 
+                        print("Correct Answers: ", end="")
+                        for answer in answers:
+                            print(answer, end=" ")
+                        print()
+                        print("User Choices: ", end="")
+                        for choice in choices:
+                            print(choice, end=" ")
+                        print()
 
-                        # choices = []
-                        # score = 0
-                        # count_question = 0
-                        #
-                        # for question in questions:
-                        #     print("------------------------------")
-                        #     print(question)
-                        #     for option in options[count_question]:
-                        #         print(option)
-                        #     print("")
-                        #     choice = input("Choose the right option: ").upper()
-                        #     choices.append(choice)
-                        #     if choice == answers[count_question]:
-                        #         score += 2
-                        #         print("correct answer!!")
-                        #     else:
-                        #         print("wrong answer!!")
-                        #         print("")
-                        #         print(f"Right answer is: {answers[count_question]}")
-                        #     count_question += 1
-                        #
-                        # print("-----------------------------------")
-                        # print("------------RESULTS----------------")
-                        # print("-----------------------------------")
-                        #
-                        # print("Correct Answers: ", end="")
-                        # for answer in answers:
-                        #     print(answer, end=" ")
-                        # print()
-                        # print("User Choices: ", end="")
-                        # for choice in choices:
-                        #     print(choice, end=" ")
-                        # print()
-                        #
-                        # # # TOTALING AND PASS/FAIL CRITERIA ON BASIS OF PERCENTAGES# #
-                        # print("Total score:",score, "out of", total)
-                        # percentage= (score/total)*100
-                        # # print(f"percentage :{percentage:.2f}")
-                        # print()
+                        # # TOTALING AND PASS/FAIL CRITERIA ON BASIS OF PERCENTAGES# #
+                        print("Total score:",score, "out of", total)
+                        percentage= (score/total)*100
+                        # print(f"percentage :{percentage:.2f}")
+                        print()
 
 
                         ###-------Results----####
