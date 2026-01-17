@@ -6,6 +6,7 @@ count=0
 score=0
 total_score=4
 option=""
+
 print("--------------------Welcome to Holton's Quiz-------------------")
 # choice= str(input("options:\nA.Signup\nB.Login\nChoose the option: "))
 user_name_password =[
@@ -68,6 +69,7 @@ a. Microsoft Excel
                             else:
                                 print()
                                 print("wrong answer")
+                                print("the right answer is: ", )
                             flag2 = input("--Do you want to quit the quiz(Yes/No)?:").lower()
                             if flag2 == 'yes':
                                 break

@@ -1,5 +1,4 @@
-#
-#
+from operator import index
 #
 # # key questions and options
 # # value --- options
@@ -55,43 +54,99 @@
 #
 #
 #
-questions = [{"""2. Which software is used for creating and managing spreadsheets???
-a. Microsoft Excel
-b. Microsoft PowerPoint
-c. Adobe Illustrator
-d. Google Drive""":"b"},{"""1.what is name of American president?
-a. william Harold
-b. Donald Trump
-c. George Bush""":"b"}
+from tkinter.messagebox import QUESTION
+
+quiz_questions = [{"Question":"1. Which software is used for creating and managing spreadsheets?\na. Microsoft Excel\nb. Microsoft PowerPoint\nc. Adobe Illustrator",
+                   "Answer": "b"},
+                  {"Question":"2.what is name of American president?\na. william Harold\nb. Donald Trump\nc. George Bush",
+                   "Answer": "b"},
+                  {"Question":"3.what is capital of UK?\na.london\nb.bolton\nc.brighton",
+                   "Answer":"a"},
+                  {"Question":"4. what is cupid known for?\na.love \nb.hatred \nc.warrior ",
+                   "Answer":"a"},
+                  ]
 
 
 
-            ]
+
+
+count=0
 score=0
-total_score=4
+total_score=8
+user_answers=[]
+correct_answers=['b','b','a','a']
+total_questions=1
+
+
 # for line in lines:
 #     print("\n".join(lines))
 # # multi_line = "\n".join(lines)
 # # print(multi_line)
-for i in questions:
-    print("\n".join(i))
+print("                                       Welcome to the Quiz")
+for i in list(quiz_questions):
     print()
-    flag1=input("--Do you want to skip the question(Yes/No)?:").lower()
+    flag2 = input("                       Do you want to QUIT the quiz (Yes/No)?:").lower()
+    if flag2 == 'yes':
+        print("You chose to quit the quiz")
+        print("Total Score is:", score, "/", total_score)
+        break
+    print(i["Question"])
+    print()
+    flag1=input("                       Do you want to SKIP the question(Yes/No)?: ").lower()
     if flag1=='yes':
         continue
-    answer= input("enter the answer(a/b/c/d): ")
-    if answer==questions:
+    answer= input("enter the answer(a/b/c/d): ").lower()
+    user_answers.append(answer)
+    if answer==quiz_questions[count]["Answer"]:
         print()
         print("correct answer you got +2")
-        score =score+2
+        score +=2
+        count+=1
         print()
     else:
         print()
         print("wrong answer")
-    flag2=input("--Do you want to quit the quiz(Yes/No)?:").lower()
-    if flag2=='yes':
-        break
-print("Total score is:", score,"/",total_score)
+        # print(f"Correct answer is:",quiz_questions["Answer"])
+        count=count+1
+
+
+
+total_questions+=1
+print("                             Quiz is over")
+print("                             Final Results")
+print("                 You scored:", score, "/", total_score)
+print("                 user choice:", user_answers)
+        # print("                 correct answers are:", correct_answers)
+
+
+
+
+
+
+
+
+
+
+# for index, (key, value) in enumerate(d.items()):
+#     print(index, "-", key, ":", value)
+
+
+
+
+
+
+
+
+
+
+# print("Total score is:", score,"/",total_score)
+# print("user choice:",user_answers)
+# print("correct answers are:",correct_answers)
+
+
+
+
+
 
 
 ### scoring logic with try/except

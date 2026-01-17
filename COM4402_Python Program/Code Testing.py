@@ -11,17 +11,17 @@ username = ""
 password = ""
 login_success = False
 
-questions = [
-                "1. who is the father of computer?",
-                "2. what is the brain of a computer?",
-                "3. who are you?"
-            ]
-options = [
-            ["1. Charles Babbage", "2. James Hortons", "3. Bill Gates", "4.Dennis James"],
-            ["1. CPU", "2. RAM", "3.GPU"],
-            ["1. Human", "2. Alien", "3.Animal"]
-        ]
-answers = [1,1,1]
+# questions = [
+#                 "1. who is the father of computer?",
+#                 "2. what is the brain of a computer?",
+#                 "3. who are you?"
+#             ]
+# options = [
+#             ["1. Charles Babbage", "2. James Hortons", "3. Bill Gates", "4.Dennis James"],
+#             ["1. CPU", "2. RAM", "3.GPU"],
+#             ["1. Human", "2. Alien", "3.Animal"]
+#         ]
+# answers = [1,1,1]
 
 question_Database = [
     {
@@ -153,9 +153,9 @@ def handle_quiz():
         for i in range(len(options[count_question])):
             print(options[count_question][i])
         print("")
-        choice = input("Choose the right option: ").upper()
-        choices.append(choice)
-        if choice == answers[count_question]:
+        user_choice = int(input("Choose the right option: "))
+        choices.append(user_choice)
+        if user_choice == answers[count_question]:
             score += 2
             print("correct answer!!")
         else:
@@ -190,7 +190,7 @@ def handle_quiz():
         user_input = int(input("Enter 1 if you wish to view detailed results: "))
         if user_input != 1:
             print("Level_2")
-            print("questions")
+    #         print("questions")
         # else:
         #     def quiz_results()
 
@@ -226,6 +226,8 @@ def handle_result_display():
         print(f"user name: {username}")
         print("Excellent! You have passed the test by getting grade A+")
         print("Results: Grade: A+", "", "score:", score, "", "Percentage", f"{percentage:.2f}")
+
+
 
 
 

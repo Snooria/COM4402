@@ -490,7 +490,7 @@ from turtledemo.round_dance import stop
 
 ########-------------------------------------#########
 ##--##--##--##
-# functions that we need.
+#functions that we need.
 
 # def new_quiz():
 #     pass
@@ -500,64 +500,71 @@ from turtledemo.round_dance import stop
 #     pass
 # def re_attempt():
 #     pass
-#
-# questions_index=[
-#     "1", "who is the father of computer?"
-#     "2", "what is the brain of a computer?"
-#     "3", "who are you?"
-# ]
-# options_index=[
-#     ["A. Charles Babbage", "B. James Hortons", "C. Bill Gates", "D.Dennis James"],
-#     ["A. CPU", "B. RAM", "C.GPU"],
-#     ["A. Human", "B. Alien", "C.Animal"]
-#
-# ]
+
+questions_index=[
+    "1", "who is the father of computer?"
+    "2", "what is the brain of a computer?"
+    "3", "who are you?"
+]
+options_index=[
+    ["A. Charles Babbage", "B. James Hortons", "C. Bill Gates", "D.Dennis James"],
+    ["A. CPU", "B. RAM", "C.GPU"],
+    ["A. Human", "B. Alien", "C.Animal"]
+
+]
 #----------------------------------------------------------#
-# questions= [
-#         "1. who is the father of computer?",
-#         "2. what is the brain of a computer?",
-#         "3. who are you?"
-# ]
-# options= [
-#     ["A. Charles Babbage", "B. James Hortons", "C. Bill Gates", "D.Dennis James"],
-#     ["A. CPU", "B. RAM", "C.GPU"],
-#     ["A. Human", "B. Alien", "C.Animal"]
-# ]
-# answers= ["A", "A", "A"]
-# choices=[]
-# score=0
-# total=6
-# count_question=0
-#
-# for question in questions:
-#     print("------------------------------")
-#     print(question)
-#     for  option in options[count_question]:
-#         print(option)
-#     print("")
-#     choice=input("Choose the right option: ").upper()
-#     choices.append(choice)
-#     if choice == answers[count_question]:
-#         score+=2
-#         print("correct answer!!")
-#     else:
-#         print("wrong answer!!")
-#         print("")
-#         print(f"Right answer is: {answers[count_question]}")
-#     count_question+=1
-#
-# print("-----------------------------------")
-# print("------------RESULTS----------------")
-# print("-----------------------------------")
-#
-# print("Answers: ", end="")
-# for answer in answers:
-#     print(answer, end=" ")
-# print()
-# print("Choices: ", end="")
-# for choice in choices:
-#     print(choice, end=" ")
-# print()
+questions= [
+        "1. who is the father of computer?",
+        "2. what is the brain of a computer?",
+        "3. who are you?"
+]
+options= [
+    ["A. Charles Babbage", "B. James Hortons", "C. Bill Gates", "D.Dennis James"],
+    ["A. CPU", "B. RAM", "C.GPU"],
+    ["A. Human", "B. Alien", "C.Animal"]
+]
+answers= ["A", "A", "A"]
+choices=[]
+score=0
+total=6
+count_question=0
+
+for question in questions:
+    print("------------------------------")
+    print(question)
+    for  option in options[count_question]:
+        print(option)
+    print("")
+    choice=input("Choose the right option: ").upper()
+    choices.append(choice)
+    if choice == answers[count_question]:
+        score+=2
+        print("correct answer!!")
+    else:
+        print("wrong answer!!")
+        print("")
+        print(f"Right answer is: {answers[count_question]}")
+    count_question+=1
+
+print("-----------------------------------")
+print("------------RESULTS----------------")
+print("-----------------------------------")
+
+
+
+
+
+
+
+print()
+print("Answers: ", end="")
+for answer in answers:
+    print(answer, end=" ")
+print()
+print("Choices: ", end="")
+for choice in choices:
+    print(choice, end=" ")
+print()
 #
 #
 #=----------------------------====######
@@ -609,14 +616,80 @@ from turtledemo.round_dance import stop
 
 #######FUNCTIONS####
 
-def greet():
-    print("Hello!")
+# def greet():
+#     print("Hello!")
 
 # calling the function
-greet()
-greet()
+# greet()
+# greet()
+
+########------------------------------#################
+
+# def classify_mark(mark):
+#     if not isinstance(mark, int):
+#         raise TypeError("Invalid type")
+#     if mark < 0 or mark > 100:
+#         raise ValueError
+#     if mark<=39:
+#          return"Fail"
+#     if mark>=40 and mark<=69:
+#          return"Pass"
+#     if mark>=70 & mark<=100:
+#             return"Distinction"
+#     else:
+#         print("Error")
+#         return int(mark)
+
+    ###=============================================##
+# score=0
+# total=0
+#
+# print("Total score:",score, "out of", total)
+# print("Total score:",score, "out of", total)
+# percentage= (score/total)*100
+# print(f"percentage :{percentage:.2f}")
+# print()
+
+# def total_score(score):
+#     score += score
+#     score
+#
+# print("Total score:",score, "out of", total)
+#
+# percentage= (score/total)*100
+# percentage
+#
+# print(f"percentage :{percentage:.2f}")
+# print()
 
 
+
+
+
+
+
+
+# convert the score into percentage and then decide whether the user pass or failed the quiz.
+# print("Total score:",score, "out of", total)
+# percentage= (score/total)*100
+# print(f"percentage :{percentage:.2f}")
+# print()
+
+# if percentage<40:
+#     print("Unfortunately, you have to retake the test")
+#     print("Results: Grade: D","", "score:", score, "", "Percentage",f"{percentage:.2f}")
+# elif(percentage>40 and percentage<50):
+#     print("You have passed the test by getting grade C")
+#     print("Results: Grade: C","","score:", score, "", "Percentage",f"{percentage:.2f}")
+# elif percentage>50 and percentage<70:
+#     print("You have passed the test by getting grade B")
+#     print("Results: Grade: B","", "score:", score, "", "Percentage",f"{percentage:.2f}")
+# elif percentage>70 and percentage<80:
+#     print("Well done! You have passed the test by getting grade A")
+#     print("Results: Grade: A","","score:", score, "", "Percentage",f"{percentage:.2f}")
+# elif percentage>80:
+#     print("Excellent! You have passed the test by getting grade A+")
+#     print("Results: Grade: A+","", "score:", score, "", "Percentage",f"{percentage:.2f}")
 
 
 
