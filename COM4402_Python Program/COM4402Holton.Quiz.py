@@ -56,6 +56,8 @@ from operator import index
 #
 from tkinter.messagebox import QUESTION
 
+import percentage
+
 quiz_questions = [{"Question":"1. Which software is used for creating and managing spreadsheets?\na. Microsoft Excel\nb. Microsoft PowerPoint\nc. Adobe Illustrator",
                    "Answer": "b"},
                   {"Question":"2.what is name of American president?\na. william Harold\nb. Donald Trump\nc. George Bush",
@@ -67,9 +69,6 @@ quiz_questions = [{"Question":"1. Which software is used for creating and managi
                   ]
 
 
-
-
-
 count=0
 score=0
 total_score=8
@@ -78,14 +77,57 @@ correct_answers=['b','b','a','a']
 total_questions=1
 
 
-# for line in lines:
-#     print("\n".join(lines))
-# # multi_line = "\n".join(lines)
-# # print(multi_line)
-print("                                       Welcome to the Quiz")
+
+def quiz_grading(score, total_score):
+    percentage=(score/total_score)*100
+    return percentage
+# user_name_password =[
+#                     ['harry', 'ha123'],
+#                     ['saima', 'sa123'],
+#                     ['paige', 'pa123']
+#     ]
+# # for line in lines:
+# #     print("\n".join(lines))
+# # # multi_line = "\n".join(lines)
+# # # print(multi_line)
+#
+# print("                                       Welcome to the Quiz")
+# def get_valid_input(start, end):
+#     option = -1
+#     try:
+#         while option < start or option > end:
+#             option = int(input("Enter your choice: "))
+#     except ValueError:
+#         print("please enter valid input")
+#     return option
+# def handle_login(login_success):
+#     while login_success == False:
+#         print("1.Login\n2.Signup")
+#
+#         choice= get_valid_input(1,2)
+#         if choice==1:
+#             print("---Login---")
+#             username = input("Enter your username: ")
+#             password = input("Enter your password: ")
+#
+#             for user in user_name_password:
+#                 if username == user[0] and password == user[1]:
+#                     login_success = True
+#                     break
+#
+#             if login_success == False:
+#                 print("Wrong username or password")
+#
+#         elif choice==2:
+#             print("---Signup---")
+#             username = str(input(f"Enter username:  "))
+#             password = input("make strong password: ")
+#             user_name_password.append([username, password])
+#             print("signup successful!")
+#     return login_success
 for i in list(quiz_questions):
     print()
-    flag2 = input("                       Do you want to QUIT the quiz (Yes/No)?:").lower()
+    flag2 = input("                       Do you want to QUIT the quiz at this point (Yes/No)?:").lower()
     if flag2 == 'yes':
         print("You chose to quit the quiz")
         print("Total Score is:", score, "/", total_score)
@@ -95,7 +137,18 @@ for i in list(quiz_questions):
     flag1=input("                       Do you want to SKIP the question(Yes/No)?: ").lower()
     if flag1=='yes':
         continue
-    answer= input("enter the answer(a/b/c/d): ").lower()
+
+# create function to make sure user answer falls within the valid options range.
+    def valid_option():
+        valid = {"a", "b", "c", "d"}
+        while True:
+            answer = input("enter the answer(a/b/c/d): ").lower()
+            if answer in valid:
+                return answer
+            else:
+                print("invalid option")
+#---------------------------------------------#
+    answer = valid_option()
     user_answers.append(answer)
     if answer==quiz_questions[count]["Answer"]:
         print()
@@ -112,13 +165,46 @@ for i in list(quiz_questions):
 
 
 total_questions+=1
-print("                             Quiz is over")
-print("                             Final Results")
-print("                 You scored:", score, "/", total_score)
-print("                 user choice:", user_answers)
-        # print("                 correct answers are:", correct_answers)
+
+# def detailed_results(score, total_score, user_answers, correct_answers):
+#     percentage=quiz_grading(score, total_score)
+
+print("============Quiz is over===========")
+print("-----------Final Results-----------")
+print("===================================")
+print("===================================")
+print("You scored:", score, "/", total_score)
+print("====================================")
+print("user choice:", user_answers)
+print("====================================")
+print("correct answers are:", correct_answers)
+print("====================================")
+# print("percentage is:", f"{percentage:.2f}%")
 
 
+
+
+
+
+# def detailed_results(score, total_score, user_answers, correct_answers):
+
+
+
+
+
+
+
+
+# def valid_option():
+#     valid={"a","b","c","d"}
+#     while True:
+#         answer=input("enter the answer(a/b/c/d): ").lower()
+#         if answer in valid:
+#             return answer
+#         else:
+#             print("invalid option")
+# answer=valid_option()
+#
 
 
 
@@ -130,7 +216,8 @@ print("                 user choice:", user_answers)
 # for index, (key, value) in enumerate(d.items()):
 #     print(index, "-", key, ":", value)
 
-
+# while True:
+#     quiz_grading(score, total_score)
 
 
 
@@ -168,4 +255,4 @@ print("                 user choice:", user_answers)
 #     else:
 #         print("Invalid marks. Please enter a value between 0 and 100.")
 # except ValueError:
-#     print("Invalid input. Please enter a numeric value.")
+print("Invalid input. Please enter a numeric value.")

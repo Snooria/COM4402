@@ -200,7 +200,7 @@ def view_results():
 def handle_result_display():
     print("---Detailed Results---")
     percentage = (score / total) * 100
-    # print(f"percentage :{percentage:.2f}")
+     # print(f"percentage :{percentage:.2f}")
     # print()
     if percentage < 40:
         print("------Results-----")
