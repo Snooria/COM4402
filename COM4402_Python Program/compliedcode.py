@@ -7,13 +7,13 @@ from colorama import Fore, Back, init
 init(autoreset=True)
 
 count=0
-score=0
+
 
 
 user_answers=[]
 total_score=30
 correct_answers=['b','b','a','a']
-total_questions=1
+
 
 user_database=[['harry','ha123'],['william','wi123'],
                ['maria', 'ma123'],['sarah','sa123'],
@@ -77,7 +77,7 @@ def login_quiz():
                     time.sleep(1)
                     print(Fore.BLACK+Back.GREEN+str("welcome to the quiz").title())
                     print(str("Test you knowledge").title())
-                    quiz_questions()
+                    quiz_questionair()
                     return None
                 else:
                     print("Wrong username or password")
@@ -91,8 +91,56 @@ def login_quiz():
 
 def sign_up():
     print("bye")
-def quiz_questions():
-    print("quiz_questions")
+
+
+
+def quiz_questionair():
+    count = 0
+    score=0
+
+    for i in list(quiz_questions):
+        print()
+        flag2 = input("Do you want to QUIT the quiz at this point (Yes/No)?:").lower()
+        if flag2 == 'yes':
+            print("You chose to quit the quiz")
+            print("Total Score is:", score, "/", total_score)
+            break
+        print(i["Question"])
+        print()
+        flag1 = input("Do you want to SKIP the question(Yes/No)?: ").lower()
+        if flag1 == 'yes':
+            continue
+
+        # create function to make sure user answer falls within the valid options range.
+        def valid_option():
+            valid = {"a", "b", "c", "d"}
+            while True:
+                answer = input(Fore.BLACK+Back.WHITE+"enter the answer(a/b/c/d): ").lower()
+                if answer in valid:
+                    return answer
+                else:
+                    print("invalid option")
+
+        answer = valid_option()
+        user_answers.append(answer)
+        if answer == quiz_questions[count]["Answer"]:
+            print()
+            print(Fore.BLACK+Back.GREEN+"correct answer you got +2")
+            score += 3
+            count += 1
+            print()
+        else:
+            print()
+            print(Fore.BLACK+Back.RED+"wrong answer")
+            count = count + 1
+            for i in list(quiz_questions):
+                if i == len(quiz_questions):
+
+                    print(Fore.BLACK + Back.BLUE + "the quiz is over")
+
+
+
+
 
 
 main_menu()
