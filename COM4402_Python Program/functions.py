@@ -1,3 +1,50 @@
+from colorama import Fore, Back, Style, init
+init(autoreset=True)
+# print(Fore.RED+"this text is red")
+# print(Back.GREEN+"this text is green")
+# print(Style.RESET_ALL)
+
+
+
+
+# import turtle
+#
+# t=turtle.Turtle()
+#
+#
+# #using basic colors
+# t.color("red")
+# t.begin_fill()
+# t.circle(30)
+# t.end_fill()
+#
+# # Move to a new position
+# t.penup()
+# t.goto(100, 0)
+# t.pendown()
+#
+# # Try another color
+# t.color("blue")
+# t.begin_fill()
+# t.circle(50)
+# t.end_fill()
+#
+# # Create screen and set background color
+# # screen = turtle.Screen()
+# # screen.bgcolor("lightblue")  # Using a named color
+# #
+# # t = turtle.Turtle()
+# # t.color("navy")
+# # t.begin_fill()
+# # t.circle(50)
+# # t.end_fill()
+# #
+# # turtle.done()
+
+
+
+
+
 # # #Dictionary
 # prices={"coffee": "£10.50",
 #        "latte": "07.50",
@@ -12,7 +59,7 @@
 #     print(f"The price of {item} is:" ,prices[item])
 # else:
 #     print("unknown item")
-import grade
+import grades
 
 # def sq(n):
 #     print(f"Square of {n} is {n*n}")
@@ -55,7 +102,7 @@ import grade
 #create function to get the value for u
 #create function to do get input from user and get into function , do the calculations and get back to you and display the output.
 #means return back to you.
-total_score=10
+total_score=30
 
 def percentage_grading(score,total_score):
     percentage=(score/total_score)*100
@@ -71,25 +118,32 @@ def quiz_grading(score,total_score):
     percentage=percentage_grading(score,total_score)
 
     if percentage<40:
-        grade="D"
-        print("Failed...!!")
-    elif 40> percentage <60:
-        grade="C"
-        print("You have passed...!!")
-    elif 60> percentage <70:
-        grade="B"
-        print("Good..You have successfully passed...!!")
-    elif 70> percentage <80:
-        grade="A"
-        print("Great....You have passed...!!")
-    elif percentage>80:
-        grade="A+"
-        print("Brilliant.. You did a great job..!!")
-    return grade
+        grades="D"
+        print(Fore.BLACK+ Back.RED+"Failed...!!")
+    elif 40<= percentage <60:
+        grades="C"
+        print(Fore.BLACK+Back.YELLOW+"You have passed...!!")
+    elif 60<= percentage <70:
+        grades="B"
+        print(Fore.BLACK+Back.BLUE+ "Good..You have successfully passed...!!")
+    elif 70<= percentage <80:
+        grades="A"
+        print(Fore.BLACK + Back.GREEN+"Great....You have passed...!!")
+    elif percentage >=80:
+        grades="A+"
+        print(Fore.BLACK + Back.GREEN +"Brilliant.. You did a great job..!!")
+        print(Style.RESET_ALL)
 
-grade=quiz_grading(score,total_score)
-print(f"Percentage: {percentage}%")
-print(f"Grade:{grade}")
+    return grades
+
+grades=quiz_grading(score, total_score)
+print(f"percentage is: {percentage:.2f}%")
+print(f"Grade:{grades}")
+
+# print(Fore.GREEN + f"Percentage: {percentage}%")
+# print(Fore.BLUE + f"Grade: {grade}")
+
+
 
 
 
