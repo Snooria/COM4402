@@ -109,6 +109,8 @@ import grades
 #create function to get the value for u
 #create function to do get input from user and get into function , do the calculations and get back to you and display the output.
 #means return back to you.
+
+
 total_score=30
 
 def percentage_grading(score,total_score):
@@ -123,50 +125,67 @@ def percentage_grading(score,total_score):
 
 def quiz_grading(score,total_score):
     percentage=percentage_grading(score,total_score)
-
     if percentage<40:
         grades="D"
-        print(Fore.BLACK+ Back.RED+"Failed...!!")
     elif 40<= percentage <60:
         grades="C"
-        print(Fore.BLACK+Back.YELLOW+"You have passed...!!")
     elif 60<= percentage <70:
         grades="B"
-        print(Fore.BLACK+Back.BLUE+ "Good..You have successfully passed...!!")
     elif 70<= percentage <80:
         grades="A"
-        print(Fore.BLACK + Back.GREEN+"Great....You have passed...!!")
-    elif percentage >=80:
+    elif percentage >80:
         grades="A+"
-        print(Fore.BLACK + Back.GREEN +"Brilliant.. You did a great job..!!")
-        print(Style.RESET_ALL)
-
     return grades
 
-# percentage = percentage_grading(score, total_score)
 
+def grade_message(Grade):
+
+    if Grade == "A+":
+        com= Fore.BLACK + Back.GREEN +"Brilliant.. You did a great job..!!"
+    elif Grade == "A":
+        com= Fore.BLACK + Back.GREEN + "Great....You have passed...!!"
+    elif Grade == "B":
+        com= Fore.BLACK + Back.BLUE + "Good..You have successfully passed...!!"
+    elif Grade=="C":
+         com= Fore.BLACK + Back.YELLOW + "You have passed...!!"
+    elif Grade=="D":
+          com= Fore.BLACK + Back.RED + "Failed...!!"
+    return com
+
+
+
+
+
+# percentage = percentage_grading(score, total_score)
+score = float(input("enter your score: "))
 def Detailed_results(total_score):
-    score = float(input("enter your score: "))
     Per = percentage_grading(score, total_score)
     Grade=quiz_grading(score,total_score)
+    comment = grade_message(Grade)
 
-    print("your percentage is:", Per)
+    time.sleep(1.5)
+    print(Fore.BLACK+Back.BLUE+"------Results------")
+    print()
+    time.sleep(1.5)
+    print(comment)
+    time.sleep(1.5)
+    print()
+    print(f"your score is:",score,"/",total_score)
+    time.sleep(1.5)
+    print(f"percentage is: {Per:.2f}%")
+    time.sleep(1.5)
     print("your grade is:", Grade)
-    return Per,Grade
+    print(Fore.BLACK+Back.YELLOW+"---Thank you for testing your knowledge---")
+    return Per, Grade,comment
+
 
 Detailed_results(total_score)
 
 
 
-# print(f"percentage is: {percentage:.2f}%")
-# print(f"Grade:{grades}")
-
-# print(Fore.GREEN + f"Percentage: {percentage}%")
-# print(Fore.BLUE + f"Grade: {grade}")
 #
-# for i in range(0,5):
-#   print(i)
-#   time.sleep(1)
+
+
 
 
 
