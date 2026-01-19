@@ -1,11 +1,15 @@
+import time
 from random import choice
 
 from click.exceptions import Exit
+from colorama import Fore, Back, init
+
+init(autoreset=True)
 
 count=0
 score=0
 
-username=[]
+
 user_answers=[]
 total_score=30
 correct_answers=['b','b','a','a']
@@ -60,11 +64,37 @@ def main_menu():
                 print("Invalid choice, Enter 1-3")
     exit
 def login_quiz():
-    print("hi")
+        print("---Login---")
+        login_success = False
+        while True:
+            username = input("Enter your username: ").lower()
+            password = input("Enter your password: ").lower()
+            for user in user_database:
+                if username == user[0] and password == user[1]:
+                    print("Login successful!")
+                    print(Fore.BLACK+Back.CYAN+"Hello " + username + "!!!")
+                    print()
+                    time.sleep(1)
+                    print(Fore.BLACK+Back.GREEN+str("welcome to the quiz").title())
+                    print(str("Test you knowledge").title())
+                    quiz_questions()
+                    return None
+                else:
+                    print("Wrong username or password")
+                    login_quiz()
+                return login_success
+
+
+
+
+
+
 def sign_up():
-        print("bye")
+    print("bye")
+def quiz_questions():
+    print("quiz_questions")
+
 
 main_menu()
-login_quiz()
-sign_up()
+
 
