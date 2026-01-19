@@ -1,6 +1,9 @@
 import time
 from random import choice
 
+import grade
+from torchgen.api.cpp import return_type
+
 from click.exceptions import Exit
 from colorama import Fore, Back, init
 
@@ -41,10 +44,9 @@ quiz_questions = [{"Question":"1. Which of the following methods can be used to 
                    "Answer":"b"},
                   ]
 #Login_menu
-# print(str("------Welcome to the holton's quiz------").title())
+# print(Fore.BLACK+(str("------Welcome to the holton's quiz------").title()))
 
 def main_menu():
-    print(Fore.BLACK+Back.BLUE+(str("------Welcome to the holton's quiz------").title()))
     print(str("1.Login and Quiz\n2.Signup\n3.Quit").title())
     while True:
             try:
@@ -137,11 +139,9 @@ def quiz_questionair():
                 print()
                 print(Fore.BLACK+Back.RED+"wrong answer")
                 count = count + 1
-                time.sleep(1)
-    print(Fore.BLACK + Back.BLUE +"--the quiz is over--")
+    print(Fore.BLACK + Back.BLUE + "the quiz is over")
     time.sleep(1)
     print(Fore.BLACK + Back.BLUE + "------Results------")
-    print()
     time.sleep(1.5)
     print(result_com(score))
     time.sleep(1.5)
@@ -151,12 +151,8 @@ def quiz_questionair():
     time.sleep(1.5)
     print("Grade:",quiz_grading(score))
     time.sleep(1.5)
-    print("User_choices:", user_answers)
-    time.sleep(1)
-    print("Correct answers:",correct_answers)
     print(Fore.BLACK + Back.CYAN + "---Thank you for taking part in quiz---")
     return  score
-
 
 def user_score(score):
     score+=3
@@ -167,21 +163,26 @@ def user_score(score):
 def percentage_grading(score):
     percentage=(score/total_score)*100
     return percentage
-#
+
 def quiz_grading(score):
     percentage=percentage_grading(score)
     if percentage<40:
-        grade="D"
+        grade="D".upper()
+        print(Fore.BLACK + Back.RED + "Failed...!!")
     elif 40<= percentage <60:
-        grade="C"
+        grade = "C".upper()
+        # print(Fore.BLACK + Back.YELLOW + "You have passed...!!")
     elif 60<= percentage <70:
-        grade="B"
+        grade="B".upper()
+        # print(Fore.BLACK + Back.BLUE + "Good..You have successfully passed...!!")
     elif 70<= percentage <80:
-        grade="A"
+        grade="A".upper()
+        # print(Fore.BLACK + Back.GREEN + "Great....you have good understanding of python...!!")
     elif percentage >=80:
-        grade="A+"
+        grade="A+".upper()
+        # print(Fore.BLACK + Back.GREEN +"Brilliant.. You did a great job..!!")
     return grade
-#
+
 def result_com(score):
     grade=quiz_grading(score)
     if grade=='A+':
@@ -196,7 +197,21 @@ def result_com(score):
         com=Fore.BLACK + Back.RED + "NEVER giveup\nBetter luck next time"
     return com
 
-
+# def grade_message(Grade):
+#     Grade=quiz_grading(score)
+#     if Grade == "A+":
+#         com= Fore.BLACK + Back.GREEN +"Brilliant.. You did a great job..!!"
+#     elif Grade == "A":
+#         com= Fore.BLACK + Back.GREEN + "Great....You have passed...!!"
+#     elif Grade == "B":
+#         com= Fore.BLACK + Back.BLUE + "Good..You have successfully passed...!!"
+#     elif Grade=="C":
+#          com= Fore.BLACK + Back.YELLOW + "You have passed...!!"
+#     elif Grade=="D":
+#             com= Fore.BLACK + Back.RED + "Failed...!!"
+#     return com
+# #
+# # score = float(input("enter your score: "))
 # def detailed_results(score):
 #
 #     Per = percentage_grading(score)

@@ -119,7 +119,7 @@ def percentage_grading(score,total_score):
 
 
 
-# score=float(input("enter your score: "))
+score=float(input("enter your score: "))
 # percentage=percentage_grading(score,total_score)
 # print(f"percentage is: {percentage:.2f}%")
 
@@ -156,9 +156,9 @@ def grade_message(Grade):
 
 
 
-# percentage = percentage_grading(score, total_score)
+percentage = percentage_grading(score, total_score)
 score = float(input("enter your score: "))
-def Detailed_results(total_score):
+def detailed_results(total_score):
     Per = percentage_grading(score, total_score)
     Grade=quiz_grading(score,total_score)
     comment = grade_message(Grade)
@@ -175,11 +175,11 @@ def Detailed_results(total_score):
     print(f"percentage is: {Per:.2f}%")
     time.sleep(1.5)
     print("your grade is:", Grade)
-    print(Fore.BLACK+Back.YELLOW+"---Thank you for testing your knowledge---")
+    print(Fore.BLACK+Back.CYAN+"---Thank you for taking part in quiz---")
     return Per, Grade,comment
 
 
-Detailed_results(total_score)
+detailed_results(total_score)
 
 
 

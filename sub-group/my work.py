@@ -104,7 +104,7 @@ while True:
                             if answer == quiz_questions[count]["Answer"]:
                                 print()
                                 print("correct answer you got +2")
-                                score += 2
+                                score += 3
                                 count += 1
                                 print()
                             else:
