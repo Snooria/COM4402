@@ -1,16 +1,23 @@
 from colorama import Fore, Back, Style, init
+from torchgen.api.cpp import return_type
+
 init(autoreset=True)
 # print(Fore.RED+"this text is red")
 # print(Back.GREEN+"this text is green")
 # print(Style.RESET_ALL)
 
 
-
+import time
+# for i in range(0,5):
+#   print(i)
+#   time.sleep(1)
 
 # import turtle
 #
 # t=turtle.Turtle()
-#
+#for i in range(0,5):
+#   print(i)
+#   time.sleep(1)
 #
 # #using basic colors
 # t.color("red")
@@ -110,8 +117,8 @@ def percentage_grading(score,total_score):
 
 
 
-score=float(input("enter your score: "))
-percentage=percentage_grading(score,total_score)
+# score=float(input("enter your score: "))
+# percentage=percentage_grading(score,total_score)
 # print(f"percentage is: {percentage:.2f}%")
 
 def quiz_grading(score,total_score):
@@ -136,13 +143,30 @@ def quiz_grading(score,total_score):
 
     return grades
 
-grades=quiz_grading(score, total_score)
-print(f"percentage is: {percentage:.2f}%")
-print(f"Grade:{grades}")
+# percentage = percentage_grading(score, total_score)
+
+def Detailed_results(total_score):
+    score = float(input("enter your score: "))
+    Per = percentage_grading(score, total_score)
+    Grade=quiz_grading(score,total_score)
+
+    print("your percentage is:", Per)
+    print("your grade is:", Grade)
+    return Per,Grade
+
+Detailed_results(total_score)
+
+
+
+# print(f"percentage is: {percentage:.2f}%")
+# print(f"Grade:{grades}")
 
 # print(Fore.GREEN + f"Percentage: {percentage}%")
 # print(Fore.BLUE + f"Grade: {grade}")
-
+#
+# for i in range(0,5):
+#   print(i)
+#   time.sleep(1)
 
 
 
