@@ -8,11 +8,10 @@ init(autoreset=True)
 
 count=0
 
-
-
-user_answers=[]
+score=0
 total_score=30
-correct_answers=['b','b','a','a']
+user_answers=[]
+correct_answers=['b','b','a','a','a','c','b','b','c','b']
 
 
 user_database=[['harry','ha123'],['william','wi123'],
@@ -78,7 +77,6 @@ def login_quiz():
                     print(Fore.BLACK+Back.GREEN+str("welcome to the quiz").title())
                     print(str("Test you knowledge").title())
                     quiz_questionair()
-                    return None
                 else:
                     print("Wrong username or password")
                     login_quiz()
@@ -93,56 +91,129 @@ def sign_up():
     print("bye")
 
 
+class Grade:
+    pass
+
 
 def quiz_questionair():
-    count = 0
     score=0
+    total_score=30
+    count=0
 
     for i in list(quiz_questions):
-        print()
-        flag2 = input("Do you want to QUIT the quiz at this point (Yes/No)?:").lower()
-        if flag2 == 'yes':
-            print("You chose to quit the quiz")
-            print("Total Score is:", score, "/", total_score)
-            break
-        print(i["Question"])
-        print()
-        flag1 = input("Do you want to SKIP the question(Yes/No)?: ").lower()
-        if flag1 == 'yes':
-            continue
-
-        # create function to make sure user answer falls within the valid options range.
-        def valid_option():
-            valid = {"a", "b", "c", "d"}
-            while True:
-                answer = input(Fore.BLACK+Back.WHITE+"enter the answer(a/b/c/d): ").lower()
-                if answer in valid:
-                    return answer
-                else:
-                    print("invalid option")
-
-        answer = valid_option()
-        user_answers.append(answer)
-        if answer == quiz_questions[count]["Answer"]:
             print()
-            print(Fore.BLACK+Back.GREEN+"correct answer you got +2")
-            score += 3
-            count += 1
+            flag2 = input("Do you want to QUIT the quiz at this point (Yes/No)?:").lower()
+            if flag2 == 'yes':
+                print("You chose to quit the quiz")
+                print("Total Score is:", score, "/", total_score)
+                break
+            print(i["Question"])
             print()
-        else:
-            print()
-            print(Fore.BLACK+Back.RED+"wrong answer")
-            count = count + 1
-            for i in list(quiz_questions):
-                if i == len(quiz_questions):
+            flag1 = input("Do you want to SKIP the question(Yes/No)?: ").lower()
+            if flag1 == 'yes':
+                continue
 
-                    print(Fore.BLACK + Back.BLUE + "the quiz is over")
+            # create function to make sure user answer falls within the valid options range.
+            def valid_option():
+                valid = "a", "b", "c", "d"
+                while True:
+                    answer = input(Fore.BLACK+Back.WHITE+"enter the answer(a/b/c/d): ").lower()
+                    if answer in valid:
+                        return answer
+                    else:
+                        print("invalid option")
+            #====================================================#
 
+            answer = valid_option()
+            user_answers.append(answer)
+            if answer == quiz_questions[count]["Answer"]:
+                print()
+                print(Fore.BLACK+Back.GREEN+"correct answer you got +2")
+                score += 3
+                count += 1
+                print()
+            else:
+                print()
+                print(Fore.BLACK+Back.RED+"wrong answer")
+                count = count + 1
+    print(Fore.BLACK + Back.BLUE + "the quiz is over")
+    print("your score is:", score,'/', total_score)
+    print()
+    print("percentage:", percentage_grading(score))
+    return  score
+
+def user_score(score):
+    score+=3
+    return score
+
+
+
+def percentage_grading(score):
+    percentage=(score/total_score)*100
+    return percentage
+#
+# def quiz_grading(score):
+#     percentage=percentage_grading(score)
+#     if percentage<40:
+#         grades="D"
+#     elif 40<= percentage <60:
+#         grades="C"
+#     elif 60<= percentage <70:
+#         grades="B"
+#     elif 70<= percentage <80:
+#         grades="A"
+#     elif 80==percentage >80:
+#         grades="A+"
+#     return grades
+#
+# def grade_message(Grade):
+#     if Grade == "A+":
+#         com= Fore.BLACK + Back.GREEN +"Brilliant.. You did a great job..!!"
+#     elif Grade == "A":
+#         com= Fore.BLACK + Back.GREEN + "Great....You have passed...!!"
+#     elif Grade == "B":
+#         com= Fore.BLACK + Back.BLUE + "Good..You have successfully passed...!!"
+#     elif Grade=="C":
+#          com= Fore.BLACK + Back.YELLOW + "You have passed...!!"
+#     elif Grade=="D":
+#           com= Fore.BLACK + Back.RED + "Failed...!!"
+#     return com
+# #
+# # score = float(input("enter your score: "))
+# def detailed_results(score):
+#
+#     Per = percentage_grading(score)
+#     Grade=quiz_grading(score)
+#     comment = grade_message(Grade)
+#
+#     time.sleep(1.5)
+#     print(Fore.BLACK+Back.BLUE+"------Results------")
+#     print()
+#     time.sleep(1.5)
+#     print(comment)
+#     time.sleep(1.5)
+#     print()
+#     print(f"your score is:",score,"/",total_score)
+#     time.sleep(1.5)
+#     print(f"percentage is: {Per:.2f}%")
+#     time.sleep(1.5)
+#     print("your grade is:", Grade)
+#     print(Fore.BLACK+Back.CYAN+"---Thank you for taking part in quiz---")
+#     return Per, Grade,comment
+#
+#
+# detailed_results(score)
 
 
 
 
 
 main_menu()
+    # quiz_questionair()
+    # detailed_results(total_score)
+
+
+
+
 
 
