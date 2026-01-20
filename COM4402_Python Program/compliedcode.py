@@ -44,7 +44,7 @@ quiz_questions = [{"Question":"1. Which of the following methods can be used to 
 # print(str("------Welcome to the holton's quiz------").title())
 
 def main_menu():
-    print(Fore.BLACK+Back.BLUE+(str("------Welcome to the holton's quiz------").title()))
+    print(Fore.BLACK+Back.BLUE+str("------Welcome to the holton's quiz------").title())
     print(str("1.Login and Quiz\n2.Signup\n3.Quit").title())
     while True:
             try:
@@ -72,11 +72,12 @@ def login_quiz():
             for user in user_database:
                 if username == user[0] and password == user[1]:
                     print("Login successful!")
-                    print(Fore.BLACK+Back.CYAN+"Hello " + username + "!!!")
+                    print(Fore.BLACK+Back.CYAN+"      Hello " + username + "!!!     ")
+                    print(Fore.BLACK+Back.CYAN+"=========================")
                     print()
                     time.sleep(1)
-                    print(Fore.BLACK+Back.GREEN+str("welcome to the quiz").title())
-                    print(str("Test you knowledge").title())
+                    print(Fore.BLACK+Back.GREEN+str("welcome to the quiz ").title())
+                    print(Fore.BLACK+Back.GREEN+str(" Test you knowledge ").title())
                     quiz_questionair()
                 else:
                     print("Wrong username or password")
@@ -102,18 +103,15 @@ def quiz_questionair():
     count=0
 
     for i in list(quiz_questions):
-            print()
             flag2 = input("Do you want to QUIT the quiz at this point (Yes/No)?:").lower()
             if flag2 == 'yes':
                 print("You chose to quit the quiz")
                 print("Total Score is:", score, "/", total_score)
                 break
             print(i["Question"])
-            print()
             flag1 = input("Do you want to SKIP the question(Yes/No)?: ").lower()
             if flag1 == 'yes':
                 continue
-
             # create function to make sure user answer falls within the valid options range.
             def valid_option():
                 valid = "a", "b", "c", "d"
@@ -132,7 +130,6 @@ def quiz_questionair():
                 print(Fore.BLACK+Back.GREEN+"correct answer you got +2")
                 score += 3
                 count += 1
-                print()
             else:
                 print()
                 print(Fore.BLACK+Back.RED+"wrong answer")
@@ -158,9 +155,9 @@ def quiz_questionair():
     return  score
 
 
-def user_score(score):
-    score+=3
-    return score
+# def user_score(score):
+#     score+=3
+#     return score
 
 
 
@@ -185,15 +182,15 @@ def quiz_grading(score):
 def result_com(score):
     grade=quiz_grading(score)
     if grade=='A+':
-        com=Fore.BLACK + Back.GREEN + "Brilliant.. You did a great job..!!"
+        com=Fore.BLACK + Back.GREEN + "...Brilliant...!!\n You did a great job..!!"
     elif grade=='A':
-        com=" well done..!\n",Fore.BLACK + Back.GREEN + "Great....you have good understanding of python."
+        com=Fore.BLACK + Back.GREEN + "well done..!!!\n....you have good understanding of python."
     elif grade=='B':
-        com="good job..!\n",Fore.BLACK + Back.BLUE + "Good..You have successfully passed...!!"
+        com=Fore.BLACK + Back.BLUE + "good job.\nYou have successfully passed...!!"
     elif grade=='C':
-        com="hmm okay\n",Fore.BLACK + Back.YELLOW + "You have passed."
+        com=Fore.BLACK + Back.YELLOW + "..hmm not BAD..\nYou have passed."
     elif grade=='D':
-        com=Fore.BLACK + Back.RED + "NEVER giveup\nBetter luck next time"
+        com=Fore.BLACK + Back.RED + "...NEVER give up...\nBetter luck next time"
     return com
 
 
