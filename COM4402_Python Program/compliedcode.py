@@ -12,6 +12,8 @@ score=0
 total_score=30
 user_answers=[]
 correct_answers=['b','b','a','a','a','c','b','b','c','b']
+username=''
+password=''
 
 #Question database. #List of dictionaries being used because it offers us key and value features suitable for quiz questions and right answer.
 # List offer 0 , 1 item indexing which we need for quiz questions and correct answers.
@@ -100,8 +102,26 @@ def login_quiz():
 
 
 
+
 def sign_up():
-    print("bye")
+    while True:
+        print("---Signup---")
+
+        def valid_signup(username):
+            return username.isalpha()
+
+        while True:
+            username = str(input(f"Enter username:  ")).lower()
+            if not valid_signup(username):
+                print("invalid input.Use only letters, please")
+            else:
+                password = input("make strong password: ")
+                user_database.append([username, password])
+                print("signup successful!!!")
+                main_menu()
+
+            break
+        break
 
 
 class Grade:
