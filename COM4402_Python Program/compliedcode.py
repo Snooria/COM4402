@@ -66,7 +66,7 @@ def main_menu():
                     login_quiz()
                     break
                 elif choice==2:
-                    sign_up()
+                    sign_up(user_database)
                     break
                 elif choice==3:
                     break
@@ -96,32 +96,34 @@ def login_quiz():
                     print("Wrong username or password")
                     login_quiz()
                 return login_success
+            break
 
 
 
 
 
 
+user_database=[]
 
-def sign_up():
+def valid_signup(username):
+    return username.isalpha()
+
+def sign_up(user_database):
+
     while True:
         print("---Signup---")
+        username = str(input(f"Enter username:  ")).lower()
+        if not valid_signup(username):
+            print("invalid input.Use only letters, please")
+        else:
+            password = input("make strong password: ")
+            user_database.append([username, password])
+            print("signup successful!!!")
+            main_menu()
+            return username, password
 
-        def valid_signup(username):
-            return username.isalpha()
 
-        while True:
-            username = str(input(f"Enter username:  ")).lower()
-            if not valid_signup(username):
-                print("invalid input.Use only letters, please")
-            else:
-                password = input("make strong password: ")
-                user_database.append([username, password])
-                print("signup successful!!!")
-                main_menu()
 
-            break
-        break
 
 
 class Grade:

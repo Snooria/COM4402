@@ -214,8 +214,25 @@ detailed_results(total_score)
 #     score+=3
 #     return score
 
-
-
+#
+# user_database=[]
+#
+# def valid_signup(username):
+#     return username.isalpha()
+#
+# def sign_up(user_database):
+#
+#     while True:
+#         print("---Signup---")
+#         username = str(input(f"Enter username:  ")).lower()
+#         if not valid_signup(username):
+#             print("invalid input.Use only letters, please")
+#         else:
+#             password = input("make strong password: ")
+#             user_database.append([username, password])
+#             print("signup successful!!!")
+#             main_menu()
+#             return username, password
 
 
 
