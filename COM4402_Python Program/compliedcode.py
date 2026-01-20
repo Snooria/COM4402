@@ -13,10 +13,11 @@ total_score=30
 user_answers=[]
 correct_answers=['b','b','a','a','a','c','b','b','c','b']
 
-#Question database. #List of dictionaries being used because it offers us key and value features.
+#Question database. #List of dictionaries being used because it offers us key and value features suitable for quiz questions and right answer.
 # List offer 0 , 1 item indexing which we need for quiz questions and correct answers.
 
 #user_database. list of lists is used as it CRUD operations can easily be implemented. List is mutable.
+#list maintain order.
 
 user_database=[['harry','ha123'],['william','wi123'],
                ['maria', 'ma123'],['sarah','sa123'],
