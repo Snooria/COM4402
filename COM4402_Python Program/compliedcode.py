@@ -76,6 +76,7 @@ def main_menu():
             except ValueError:
                 print("Invalid choice, Enter 1-3")
     exit
+
 def login_quiz():
         print("---Login---")
         login_success = False
@@ -96,31 +97,31 @@ def login_quiz():
                     print("Wrong username or password")
                     login_quiz()
                 return login_success
-            break
 
 
 
 
 
 
-user_database=[]
-
-def valid_signup(username):
-    return username.isalpha()
-
-def sign_up(user_database):
-
-    while True:
-        print("---Signup---")
-        username = str(input(f"Enter username:  ")).lower()
-        if not valid_signup(username):
-            print("invalid input.Use only letters, please")
-        else:
-            password = input("make strong password: ")
-            user_database.append([username, password])
-            print("signup successful!!!")
-            main_menu()
-            return username, password
+#
+# user_database=[]
+#
+# def valid_signup(username):
+#
+#     return username.isalpha()
+#
+# def sign_up():
+#     while True:
+#         print("---Signup---")
+#         username = str(input(f"Enter username:  ")).lower()
+#         if not valid_signup(username):
+#             print("invalid input.Use only letters, please")
+#         else:
+#             password = input("make strong password: ").lower()
+#             user_database.append([username, password])
+#             print("signup successful!!!")
+#             main_menu()
+#         return
 
 
 
