@@ -184,6 +184,35 @@ detailed_results(total_score)
 
 
 #
+# def detailed_results(score):
+#
+#     Per = percentage_grading(score)
+#     Grade=quiz_grading(score)
+#     comment = grade_message(Grade)
+#
+#     time.sleep(1.5)
+#     print(Fore.BLACK+Back.BLUE+"------Results------")
+#     print()
+#     time.sleep(1.5)
+#     print(comment)
+#     time.sleep(1.5)
+#     print()
+#     print(f"your score is:",score,"/",total_score)
+#     time.sleep(1.5)
+#     print(f"percentage is: {Per:.2f}%")
+#     time.sleep(1.5)
+#     print("your grade is:", Grade)
+#     print(Fore.BLACK+Back.CYAN+"---Thank you for taking part in quiz---")
+#     return Per, Grade,comment
+#
+#
+# detailed_results(score)
+
+
+
+# def user_score(score):
+#     score+=3
+#     return score
 
 
 

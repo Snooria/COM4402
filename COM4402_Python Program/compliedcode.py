@@ -13,11 +13,15 @@ total_score=30
 user_answers=[]
 correct_answers=['b','b','a','a','a','c','b','b','c','b']
 
+#Question database. #List of dictionaries being used because it offers us key and value features.
+# List offer 0 , 1 item indexing which we need for quiz questions and correct answers.
+
+#user_database. list of lists is used as it CRUD operations can easily be implemented. List is mutable.
 
 user_database=[['harry','ha123'],['william','wi123'],
                ['maria', 'ma123'],['sarah','sa123'],
                 ['alina','al123'],['bushra','bu123']]
-#Question database. #List of dictionaries being used because it offers us key and value features.
+
 
 quiz_questions = [{"Question":"1. Which of the following methods can be used to remove an item from a list?\nA. delete()\nB. remove()\nc. update",
                    "Answer": "b"},
@@ -41,7 +45,13 @@ quiz_questions = [{"Question":"1. Which of the following methods can be used to 
                    "Answer":"b"},
                   ]
 #Login_menu
-# print(str("------Welcome to the holton's quiz------").title())
+# For Menu means  whole program code, While-Loop is used as user can make countless attempt to log in.
+# Try_Except method is applied to restrict code from breaking. user has to choose the right option from options provided
+# or else the program will not show advancement.
+# if/else conditional statements are used to prompt to right tab as per user choice.
+# Whole code is divided into multiple functions to appear composed and manageable.
+# Functions-->  questionair()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)
+#Loops-- for-loop is used as it iterate through counted questions. While-Loop for login as user can make multiple attempts.
 
 def main_menu():
     print(Fore.BLACK+Back.BLUE+str("------Welcome to the holton's quiz------").title())
@@ -96,7 +106,7 @@ def sign_up():
 class Grade:
     pass
 
-
+#
 def quiz_questionair():
     score=0
     total_score=30
@@ -127,7 +137,7 @@ def quiz_questionair():
             user_answers.append(answer)
             if answer == quiz_questions[count]["Answer"]:
                 print()
-                print(Fore.BLACK+Back.GREEN+"correct answer you got +2")
+                print(Fore.BLACK+Back.GREEN+"correct answer you got +3")
                 score += 3
                 count += 1
             else:
@@ -155,9 +165,6 @@ def quiz_questionair():
     return  score
 
 
-# def user_score(score):
-#     score+=3
-#     return score
 
 
 
@@ -182,49 +189,26 @@ def quiz_grading(score):
 def result_com(score):
     grade=quiz_grading(score)
     if grade=='A+':
-        com=Fore.BLACK + Back.GREEN + "...Brilliant...!!\n You did a great job..!!"
+        com=Fore.BLACK + Back.GREEN + "...Brilliant...!! You did a great job..!!"
     elif grade=='A':
-        com=Fore.BLACK + Back.GREEN + "well done..!!!\n....you have good understanding of python."
+        com=Fore.BLACK + Back.GREEN + "well done..!!!....you have good understanding of python."
     elif grade=='B':
-        com=Fore.BLACK + Back.BLUE + "good job.\nYou have successfully passed...!!"
+        com=Fore.BLACK + Back.BLUE + "good job.. You have successfully passed...!!"
     elif grade=='C':
-        com=Fore.BLACK + Back.YELLOW + "..hmm not BAD..\nYou have passed."
+        com=Fore.BLACK + Back.YELLOW + "..hmm not BAD..You have passed."
     elif grade=='D':
-        com=Fore.BLACK + Back.RED + "...NEVER give up...\nBetter luck next time"
+        com=Fore.BLACK + Back.RED + "...NEVER give up...Better luck next time"
     return com
 
 
-# def detailed_results(score):
-#
-#     Per = percentage_grading(score)
-#     Grade=quiz_grading(score)
-#     comment = grade_message(Grade)
-#
-#     time.sleep(1.5)
-#     print(Fore.BLACK+Back.BLUE+"------Results------")
-#     print()
-#     time.sleep(1.5)
-#     print(comment)
-#     time.sleep(1.5)
-#     print()
-#     print(f"your score is:",score,"/",total_score)
-#     time.sleep(1.5)
-#     print(f"percentage is: {Per:.2f}%")
-#     time.sleep(1.5)
-#     print("your grade is:", Grade)
-#     print(Fore.BLACK+Back.CYAN+"---Thank you for taking part in quiz---")
-#     return Per, Grade,comment
-#
-#
-# detailed_results(score)
+
 
 
 
 
 
 main_menu()
-    # quiz_questionair()
-    # detailed_results(total_score)
+
 
 
 
