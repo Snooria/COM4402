@@ -183,11 +183,65 @@ detailed_results(total_score)
 
 
 
-#
+while True:
+    user_choice = input("Do you want to continue? (y/n): ")
+    if user_choice.lower() == 'y':
+        print("Continuing...")
+        break
+    elif user_choice.lower() == 'n':
+        print("Exiting...")
+        break
+    else:
+        print("Invalid input. Please enter 'y' or 'n'.")
+
+# in case of quitting, total score will be different . rest of functions will be called as it is.
+# total_score=number of questions attempted.
+# counter needs to be fixed or just prompt user to decide whether she wants to quit or not.
+total_score=''
+quiz_questions=''
+
+while True:
+    user_choice = input("Do you want to quit after attempting half or test or want to continue till end? (q/c): ")
+    if user_choice.lower() == 'c':
+        total_score=len(quiz_questions)
+    elif user_choice.lower() == 'q':
+        total_score=len(quiz_questions)/2
+        break
+    else:
+        print("Invalid input. Please enter 'y' or 'n'.")
+
+    # flag2 = input("Do you want to QUIT the quiz at this point (Yes/No)?:").lower()
+    # if flag2 == 'y':
+    #     print("You chose to quit the quiz")
+    #     print("Total Score is:", score, "/", total_score)
+    #     break
+# print(i["Question"])
+# flag1 = input("Do you want to SKIP the question(Yes/No)?: ").lower()
+# if flag1 == 'yes':
+#     continue
+# create function to make sure user answer falls within the valid options range.
 
 
+# total_score = len(quiz_questions)
 
 
+def get_user_choice():
+    while True:
+        user_choice = input("Do you want to proceed? (y/n): ")
+        if user_choice.lower() == 'y':
+            return True
+        elif user_choice.lower() == 'n':
+            return False
+        else:
+            print("Invalid input. Please enter 'y' or 'n'.")
 
 
+if get_user_choice():
+    print("Proceeding with the operation...")
+else:
+    print("Canceling the operation...")
 
+
+    # print("User_choices:", user_answers)
+    # time.sleep(1)
+    # print("Correct answers:",correct_answers)
