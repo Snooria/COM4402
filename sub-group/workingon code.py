@@ -7,20 +7,8 @@ from numpy.ma.core import maximum
 
 init(autoreset=True)
 
-#Login_menu
-# For Menu means  whole program code, While-Loop is used as user can make countless attempt to log in.
-# Try_Except method is applied to restrict code from breaking. user has to choose the right option from options provided
-# or else the program will not show advancement.
-# List is being used to store the data and can be appended by adding new users data who want to sign up for first time.
-# data could be stored and retrieve if file handling is implemented which requires few more explanations.
-# if/else conditional statements are used to prompt to right tab as per user choice.
-# A new variable users is being created to check user input in list user_name_password if it does exist and match to help user login.
-# try-except handling tool is applied to prevent code from crashing.
-# Whole code is divided into multiple functions to appear composed and manageable.
-# Functions-->  questionair()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)
-#Loops-- for-loop is used as it iterate through counted questions. While-Loop for login as user can make multiple attempts.
-
 count=0
+
 score=0
 total_score=30
 user_answers=[]
@@ -82,8 +70,6 @@ def main_menu():
                     sign_up(user_database)
                     break
                 elif choice==3:
-                    print(Fore.BLACK+Back.CYAN+"Thank you for using Holton's Quiz Application  :) ")
-                    exit
                     break
                 else:
                     print("Invalid choice, Enter 1-3")
@@ -135,14 +121,7 @@ def sign_up(user_database):
 
             password = input("make strong password: ").lower()
             user_database.append([username, password])
-            print()
-            print(Fore.BLACK + Back.CYAN + "      Hello " + username + "You have successfully signed up!!!!!     ")
-            print(Fore.BLACK + Back.CYAN + "=========================")
-            print()
-            time.sleep(1)
-            print(Fore.BLACK + Back.GREEN + str("welcome to the quiz ").title())
-            print(Fore.BLACK + Back.GREEN + str(" Test you knowledge ").title())
-            print("....Each question carries 2 scores....")
+            print("signup successful!!!")
             quiz_questionair()
             return
 
@@ -219,15 +198,8 @@ def quiz_questionair():
     time.sleep(1.5)
 
     print(Fore.BLACK + Back.CYAN + "---Thank you for taking part in quiz---")
-    back_menu()
-    main_menu()
     return  score
 
-def back_menu():
-    print("Press any key to get back to main menu.... :) ")
-    time.sleep(1.5)
-    input()
-    return
 
 
 
