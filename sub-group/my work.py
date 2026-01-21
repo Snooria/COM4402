@@ -128,18 +128,64 @@ while True:
             else:
                 print("Wrong username or password")
         elif choice == 2:
-                    print("---Signup---")
-                    def valid_signup(username):
-                        return username.isalpha()
-                    while True:
-                        username = str(input(f"Enter username:  ")).lower()
-                        if not valid_signup(username):
-                            print("invalid input.Use only letters, please")
-                        else:
-                            password = input("make strong password: ")
-                            user_database.append([username, password])
-                        print("signup successful!!!")
-                        break
+            while True:
+                print("---Signup---")
+                def valid_signup(username):
+                    return username.isalpha()
+                while True:
+                    username = str(input(f"Enter username:  ")).lower()
+                    if not valid_signup(username):
+                        print("invalid input.Use only letters, please")
+                    else:
+                        password = input("make strong password: ")
+                        user_database.append([username, password])
+                    print("signup successful!!!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    # def valid_option():
+                    #     valid = str
+                    #     while True:
+                        #username = str(input(f"Enter username:  ")).lower()
+                    #         if username not in valid:
+                   # print("invalid input. please enter only letters")
+                    #             return
+                    #         else:
+                    #                 password = input("make strong password: ")
+                    #                 user_database.append([username, password])
+                    #                     print("signup successful!!!")
+            #
+                    # print("---Signup---")
+                    # def valid_signup(username):
+                    #     return username.isalpha()
+                    # while True:
+                    #     username = str(input(f"Enter username:  ")).lower()
+                    #     if not valid_signup(username):
+                    #         print("invalid input.Use only letters, please")
+                    #     else:
+                    #         password = input("make strong password: ")
+                    #         user_database.append([username, password])
+                    #     print("signup successful!!!")
+
         elif choice == 3:
             print("---Exiting---")
             print("Thank you for testing your knowledge")
