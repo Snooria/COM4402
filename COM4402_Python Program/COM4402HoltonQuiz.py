@@ -70,7 +70,7 @@ quiz_questions = [{"Question":"1. Which of the following methods can be used to 
 #Loops-- for-loop is used as it iterate through counted questions. While-Loop for login as user can make multiple attempts.
 
 def main_menu():
-    print(Fore.BLACK+Back.BLUE+str("------Welcome to the holton's quiz------").title())
+    print(Fore.BLACK+Back.CYAN+str("------Welcome to the holton's quiz------").title())
     print(str("1.Login and Quiz\n2.Signup\n3.Quit").title())
     while True:
             try:
@@ -136,8 +136,7 @@ def sign_up(user_database):
             password = input("make strong password: ").lower()
             user_database.append([username, password])
             print()
-            print(Fore.BLACK + Back.CYAN + "      Hello " + username + "You have successfully signed up!!!!!     ")
-            print(Fore.BLACK + Back.CYAN + "=========================")
+            print(Fore.BLACK + Back.CYAN + "      Hello " + username + "...!!!  You have successfully signed up!!!!!     ")
             print()
             time.sleep(1)
             print(Fore.BLACK + Back.GREEN + str("welcome to the quiz ").title())
@@ -204,7 +203,7 @@ def quiz_questionair():
 
         count +=1
         time.sleep(1)
-    print(Fore.BLACK + Back.BLUE +"--the quiz is over--")
+    print(Fore.BLACK + Back.BLUE +"----Quiz is over----")
     time.sleep(1)
     print(Fore.BLACK + Back.BLUE + "------Results------")
     print()
