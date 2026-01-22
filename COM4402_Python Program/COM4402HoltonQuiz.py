@@ -87,7 +87,7 @@ def main_menu():
                     break
                 else:
                     print("Invalid choice, Enter 1-3")
-                    # main_menu()
+
             except ValueError:
                 print("Invalid choice, Enter 1-3")
     exit
@@ -273,21 +273,7 @@ def result_com(score,total_score):
 main_menu()
 
 
-# def get_valid_input(start, end):
-#     option = -1
-#     try:
-#         while option < start or option > end:
-#             option = int(input("Enter your choice: "))
-#     except ValueError:
-#         print("please enter valid input")
-#     return option
-#
-#
-# option = get_valid_input(1, 3)
-#
-# option = get_valid_input(1, 2)
-#
-# option = get_valid_input(1, 4)
+
 
 
 

@@ -52,10 +52,15 @@ quiz_questions = [{"Question":"1. Which of the following methods can be used to 
 # For Menu means  whole program code, While-Loop is used as user can make countless attempt to log in.
 # Try_Except method is applied to restrict code from breaking. user has to choose the right option from options provided
 # or else the program will not show advancement.
+# List is being used to store the data and can be appended by adding new users data who want to sign up for first time.
+# data could be stored and retrieve if file handling is implemented which requires few more explanations.
 # if/else conditional statements are used to prompt to right tab as per user choice.
+# A new variable users is being created to check user input in list user_name_password if it does exist and match to help user login.
+# try-except handling tool is applied to prevent code from crashing.
 # Whole code is divided into multiple functions to appear composed and manageable.
 # Functions-->  questionair()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)
 #Loops-- for-loop is used as it iterate through counted questions. While-Loop for login as user can make multiple attempts.
+
 
 def main_menu():
     print(Fore.BLACK+Back.BLUE+str("------Welcome to the holton's quiz------").title())
@@ -147,20 +152,21 @@ def quiz_questionair():
     score=0
     count =0
     while True:
-        selection = input("choices\nA.5 Qs\nB.10 Qs\nMake choice: ").lower()
+        selection = input("A.5 Qs\nB.10 Qs\nMake choice: ").lower()
         if selection == "a":
-            max_questions = 5
+            max_question = 5
             total_score =10
             break
         elif choice == "b":
-            max_questions = 10
+            max_question = len(quiz_questions)
             total_score =20
             break
         else:
-            print("Invalid choice")
+            print("invalid choice")
+            return
 
     for i in list(quiz_questions):
-        if count == max_questions:
+        if count == max_question:
             break
 
 
