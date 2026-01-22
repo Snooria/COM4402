@@ -109,7 +109,7 @@ def login_quiz():
                 print(Fore.BLACK+Back.GREEN+str("welcome to the quiz ").title())
                 print(Fore.BLACK+Back.GREEN+str(" Test you knowledge ").title())
                 print("....Each question carries 2 scores....")
-                quiz_questionair()
+                quiz_questionnaire()
                 return
         else:
             print("Wrong username or password")
@@ -142,7 +142,7 @@ def sign_up(user_database):
             print(Fore.BLACK + Back.GREEN + str("welcome to the quiz ").title())
             print(Fore.BLACK + Back.GREEN + str(" Test you knowledge ").title())
             print("....Each question carries 2 scores....")
-            quiz_questionair()
+            quiz_questionnaire()
             return
 
 
@@ -163,7 +163,7 @@ def valid_option():
                 print("invalid option")
 
 
-def quiz_questionair():
+def quiz_questionnaire():
     score=0
     count =0
     while True:
@@ -173,7 +173,7 @@ def quiz_questionair():
                 max_question = len(quiz_questions)
                 total_score = 20
                 break
-            elif "a":
+            elif selection == "a":
                 max_question = len(quiz_questions) / 2
                 total_score = 10
                 break
