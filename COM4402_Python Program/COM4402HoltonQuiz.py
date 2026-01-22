@@ -117,24 +117,16 @@ def login_quiz():
 
 
 
-def valid_signup(username):
-    return username.isalpha()
-
 def sign_up(user_database):
     while True:
         print("---Signup---")
         username = str(input(f"Enter username:  ")).lower()
-
-        if not valid_signup(username):
-            print("invalid input.Use only letters, please")
-            return
-        for user in user_database:
-            if user[0] == username:
-                print("Username already exists.")
-                return
-
-            password = input("make strong password: ").lower()
+        if not username.isalpha():
+            print("username has to be letters only")
+        else:
+            password = input("Make strong password: ").lower()
             user_database.append([username, password])
+
             print()
             print(Fore.BLACK + Back.CYAN + "      Hello " + username + "...!!!  You have successfully signed up!!!!!     ")
             print()
@@ -144,9 +136,6 @@ def sign_up(user_database):
             print("....Each question carries 2 scores....")
             quiz_questionnaire()
             return
-
-
-
 
 
 class Grade:
