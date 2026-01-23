@@ -17,12 +17,11 @@ init(autoreset=True)
 # A new variable users is being created to check user input in list user_name_password if it does exist and match to help user login.
 # try-except handling tool is applied to prevent code from crashing.
 # Whole code is divided into multiple functions to appear composed and manageable.
-# Functions-->  questionair()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)
+# Functions-->  questionnaire()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)
 #Loops-- for-loop is used as it iterate through counted questions. While-Loop for login as user can make multiple attempts.
 
 count=0
 score=0
-total_score=30
 user_answers=[]
 correct_answers=['b','b','a','a','a','c','b','b','c','b']
 username=''
@@ -66,7 +65,7 @@ quiz_questions = [{"Question":"1. Which of the following methods can be used to 
 # or else the program will not show advancement.
 # if/else conditional statements are used to prompt to right tab as per user choice.
 # Whole code is divided into multiple functions to appear composed and manageable.
-# Functions-->  questionair()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)
+# Functions-->  questionnaire()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)
 #Loops-- for-loop is used as it iterate through counted questions. While-Loop for login as user can make multiple attempts.
 
 def main_menu():
@@ -94,7 +93,6 @@ def main_menu():
 
 def login_quiz():
     print("---Login---")
-        # login_success = False
     while True:
         username = input("Enter your username: ").lower()
         password = input("Enter your password: ").lower()
@@ -145,7 +143,7 @@ class Grade:
 def valid_option():
         valid = "a", "b", "c", "d"
         while True:
-            answer = input(Fore.BLACK + Back.WHITE + "enter the answer(a/b/c/d): ").lower()
+            answer = input(Fore.BLACK + Back.WHITE + "Choose the answer(a/b/c/d): ").lower()
             if answer in valid:
                 return answer
             else:

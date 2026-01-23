@@ -1,5 +1,6 @@
 #print("Hello World")
 import statistics
+from idlelib.autocomplete import TRY_A
 from importlib.metadata import pass_none
 
 from turtledemo.round_dance import stop
@@ -704,24 +705,73 @@ print()
 
 
 
+#
+# def get_valid_input(start, end):
+#     option = -1
+#     try:
+#         while option < start or option > end:
+#             option = int(input("Enter your choice: "))
+#     except ValueError:
+#         print("please enter valid input")
+#     return option
+#
+#
+# option = get_valid_input(1, 3)
+#
+# option = get_valid_input(1, 2)
+#
+# option = get_valid_input(1, 4)
 
-def get_valid_input(start, end):
-    option = -1
-    try:
-        while option < start or option > end:
-            option = int(input("Enter your choice: "))
-    except ValueError:
-        print("please enter valid input")
-    return option
+
+def valid_signup(username):
+    return username.isalpha()
+
+def sign_up(user_database):
+    while True:
+        print("---Signup---")
+        #         username = str(input(f"Enter username:  ")).lower()
+        try:
+            if username != username.isalpha
+                print("username has to be letters only")
+                if user[0] == username:
+                print("Username already exists.")
+            else:
+                password = input("make strong password: ").lower()
+                user_database.append([username, password])
+                   break
+        except ValueError:
+                print("invalid input, please enter only letters, please")
+                return
 
 
-option = get_valid_input(1, 3)
-
-option = get_valid_input(1, 2)
-
-option = get_valid_input(1, 4)
 
 
+
+# def sign_up(user_database):
+#     while True:
+#         print("---Signup---")
+#         username = str(input(f"Enter username:  ")).lower()
+#         try:
+#             if not valid_signup(username):
+#                 print("invalid input.Use only letters, please")
+#             for user in user_database:
+#                 if user[0] == username:
+#                     print("Username already exists.")
+#             else:
+#                 password = input("make strong password: ").lower()
+#                 break
+#         except ValueError:
+#             print("invalid input, please enter only letters, please")
+#             user_database.append([username, password])
+#             print()
+#             print(Fore.BLACK + Back.CYAN + "      Hello " + username + "...!!!  You have successfully signed up!!!!!     ")
+#             print()
+#             time.sleep(1)
+#             print(Fore.BLACK + Back.GREEN + str("welcome to the quiz ").title())
+#             print(Fore.BLACK + Back.GREEN + str(" Test you knowledge ").title())
+#             print("....Each question carries 2 scores....")
+#             quiz_questionnaire()
+#             return
 
 
 
