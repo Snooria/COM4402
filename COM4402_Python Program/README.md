@@ -1,6 +1,6 @@
-### Assignment COM4402 - Shahana Nooria Bilal - ID- 2418730
+### Assignment COM4402 - Shahana N Bilal - ID- 2418730
 
-**# Code Description**
+** # Code Description**
 
 
 This console interface based python quiz is designed to prompt user to test their knowledge.
@@ -31,7 +31,7 @@ Results will be displayed at the end of quiz
 score counter is initialized with the start of the quiz.
 correct answer will add 2 scores or wrong answer will add no score. 
 
-**# How Code Works**
+** # How Code Works**
 
 1. #  Initialization
 
@@ -53,11 +53,11 @@ Calculations are done with help of function created in program.
 Pass/fail is based on percentage achieved.
 Results will display along with marks, percentages and feedback message. 
 
-**# Getting back to main menu**
+** # Getting back to main menu**
 
 Screen message will be displayed to click any key to get back to main menu
 
-**# Exit point**
+** # Exit point**
 
 If user type integer 3, quiz will be closed with thank you message. 
 
