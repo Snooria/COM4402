@@ -22,7 +22,7 @@ init(autoreset=True)
 
 count=0
 score=0
-total_score=30
+total_score=20
 user_answers=[]
 correct_answers=['b','b','a','a','a','c','b','b','c','b']
 username=''
