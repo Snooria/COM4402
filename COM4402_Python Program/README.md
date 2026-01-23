@@ -3,17 +3,17 @@
 ** # Code Description**
 
 
-This console interface based python quiz is designed to prompt user to test their knowledge.
+This console interface based python quiz is designed to prompt user to test their knowledge.<br>
 Below is the breakdown of the whole code.
 
 ** # Key Components**
 
 # Data Structure
 
-### ******list of dictionaries is used to create quiz_database(questions). 
-### Key field contain variable 'Question' , while Value contains question text and options.
-### Next key field contains variable 'Answer' and value field holds correct answer.
-### Questions can be modified by adding more dictionaries into list.******
+list of dictionaries is used to create quiz_database(questions).<br> 
+Key field contain variable 'Question' , while Value contains question text and options.<br>
+Next key field contains variable 'Answer' and value field holds correct answer.<br>
+Questions can be modified by adding more dictionaries into list.<br>
 
 ** # Menu - user interaction**
 
