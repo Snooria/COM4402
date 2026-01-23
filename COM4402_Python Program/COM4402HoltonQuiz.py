@@ -14,7 +14,7 @@ init(autoreset=True)
 # List is being used to store the data and can be appended by adding new users data who want to sign up for first time.
 # data could be stored and retrieve if file handling is implemented which requires few more explanations.
 # if/else conditional statements are used to prompt to right tab as per user choice.
-# A new variable users is being created to check user input in list user_name_password if it does exist and match to help user login.
+# A new variable users is being created to check user input in list user_database if it does exist and match to help user login.
 # try-except handling tool is applied to prevent code from crashing.
 # Whole code is divided into multiple functions to appear composed and manageable.
 # Functions-->  questionnaire()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)

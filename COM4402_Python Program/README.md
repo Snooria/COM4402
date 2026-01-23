@@ -1,12 +1,12 @@
 ### Assignment COM4402 - Shahana N Bilal - ID- 2418730
 
-## Code Description**
+## Code Description
 
 
 This console interface based python quiz is designed to prompt user to test their knowledge.<br>
 Below is the breakdown of the whole code.
 
-#### Key Components
+## Key Components
 
 ## Data Structure
 
@@ -59,6 +59,6 @@ Screen message will be displayed to click any key to get back to main menu<br>
 
 Exit point
 
-### If user type integer 3, quiz will be closed with thank you message. 
+If user type integer 3, quiz will be closed with thank you message. 
 
-## Thank you 
+##### Thank you  ;)
