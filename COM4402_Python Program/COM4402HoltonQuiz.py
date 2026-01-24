@@ -7,19 +7,6 @@ from numpy.ma.core import maximum
 
 init(autoreset=True)
 
-#Login_menu
-# For Menu means  whole program code, While-Loop is used as user can make countless attempt to log in.
-# Try_Except method is applied to restrict code from breaking. user has to choose the right option from options provided
-# or else the program will not show advancement.
-# List is being used to store the data and can be appended by adding new users data who want to sign up for first time.
-# data could be stored and retrieve if file handling is implemented which requires few more explanations.
-# if/else conditional statements are used to prompt to right tab as per user choice.
-# A new variable users is being created to check user input in list user_database if it does exist and match to help user login.
-# try-except handling tool is applied to prevent code from crashing.
-# Whole code is divided into multiple functions to appear composed and manageable.
-# Functions-->  questionnaire()---valid_option(),(to choose the right option from given options to answer quiz questions)---percentage_grading(score)---quiz_grading(score)---result_com(score)
-#Loops-- for-loop is used as it iterate through counted questions. While-Loop for login as user can make multiple attempts.
-
 count=0
 score=0
 user_answers=[]
@@ -30,8 +17,7 @@ password=''
 #Question database. #List of dictionaries being used because it offers us key and value features suitable for quiz questions and right answer.
 # List offer 0 , 1 item indexing which we need for quiz questions and correct answers.
 
-#user_database. list of lists is used as it CRUD operations can easily be implemented. List is mutable.
-#list maintain order.
+#user_database. list of lists is used as CRUD operations can easily be implemented. List is mutable and maintain order.
 
 user_database=[['harry','ha123'],['william','wi123'],
                ['maria', 'ma123'],['sarah','sa123'],
@@ -60,7 +46,7 @@ quiz_questions = [{"Question":"1. Which of the following methods can be used to 
                    "Answer":"b"},
                   ]
 #Login_menu
-# For Menu means  whole program code, While-Loop is used as user can make countless attempt to log in.
+# For Main_Menu means for whole program code, While-Loop is used as user can make countless attempt to log in.
 # Try_Except method is applied to restrict code from breaking. user has to choose the right option from options provided
 # or else the program will not show advancement.
 # if/else conditional statements are used to prompt to right tab as per user choice.
@@ -113,7 +99,7 @@ def login_quiz():
             print("Wrong username or password")
 
 
-
+# sign -up function. method isalpha () is set to make sure input is string not integer.
 
 def sign_up(user_database):
     while True:
@@ -138,7 +124,7 @@ def sign_up(user_database):
 
 class Grade:
     pass
-
+#function is being created to validate user input for questions options
 
 def valid_option():
         valid = "a", "b", "c", "d"
@@ -149,6 +135,8 @@ def valid_option():
             else:
                 print("invalid option")
 
+# quiz questionnaire function.
+# count is initialized.
 
 def quiz_questionnaire():
     score=0
@@ -169,6 +157,8 @@ def quiz_questionnaire():
         except ValueError:
             return
 
+# for loop is set to iterate through each question according to the user choice.
+# three functions are being called in this function for displaying results details; result.com (0, percentage_grading (), quiz_grading ().
 
     for i in list(quiz_questions):
         if count == max_question:
@@ -209,6 +199,8 @@ def quiz_questionnaire():
     main_menu()
     return  score
 
+# function is created to help user to get back to main menu after displaying results.
+
 def back_menu():
     print("Press any key to get back to main menu.... :) ")
     time.sleep(1.5)
@@ -216,12 +208,14 @@ def back_menu():
     return
 
 
-
+# function is created for calculation, pass/fail will be based on percentages.
 
 def percentage_grading(score,total_score):
     percentage=(score/total_score)*100
     return percentage
-#
+
+# grading function to grade users on basis of their percentages.
+
 def quiz_grading(score,total_score):
     percentage=percentage_grading(score,total_score)
     if percentage<40:
@@ -235,7 +229,9 @@ def quiz_grading(score,total_score):
     elif percentage >=80:
         grade="A+"
     return grade
-#
+
+#feedback function is created to provide feedback as per pass/fail result.
+
 def result_com(score,total_score):
     grade=quiz_grading(score,total_score)
     if grade=='A+':

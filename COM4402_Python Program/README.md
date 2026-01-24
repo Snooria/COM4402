@@ -15,7 +15,7 @@ Key field contain variable 'Question' , while Value contains question text and o
 Next key field contains variable 'Answer' and value field holds correct answer.<br>
 Questions can be modified by adding more dictionaries into list.<br>
 
-## Menu - user interaction**
+## Menu - user interaction
 
 Menu comes with three tabs; 1. log-in and quiz 2. sign-up and quiz 3. exit.<br> 
 Once user login or sign up then quiz will be prompted with two options;<br> 
